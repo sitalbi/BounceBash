@@ -12,13 +12,14 @@ public class PlayerController : MonoBehaviour
     private bool jumpPressed, canMove;
     
     [NonSerialized] public float originalGravityScale;
-    [NonSerialized] public int xDirection, yDirection;
+    [NonSerialized] public int xDirection, yDirection, points;
     [NonSerialized] public bool isOnWall;
 
     void Start() {
         rb2D = GetComponent<Rigidbody2D>();
         xDirection = 1;
         yDirection = 1;
+        points = 0;
         originalGravityScale = rb2D.gravityScale;
     }
 
