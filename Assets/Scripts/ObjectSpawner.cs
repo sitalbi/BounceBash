@@ -29,7 +29,7 @@ public class ObjectSpawner : MonoBehaviour
         else if(canSpawnCollectable) {
             canSpawnCollectable = false;
             Random rn = new Random();
-            if (rn.Next(0, 4) == 1) {
+            if (rn.Next(0, 5) == 0) {
                 Instantiate(collectable, new Vector3(transform.position.x, transform.position.y + (1.5f*obstacle.transform.localScale.y),0), Quaternion.identity);
             }
         }

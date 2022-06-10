@@ -28,8 +28,11 @@ public class PlayerCollisions : MonoBehaviour
 
         if (col.gameObject.layer == obstacleLayer) {
             //Death
+            Destroy(this.gameObject);
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == collectableLayer) {
             playerController.points++;
             Destroy(col.gameObject);
