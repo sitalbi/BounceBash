@@ -6,16 +6,14 @@ using Random = System.Random;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject obstacle;
-    [SerializeField] private GameObject collectable;
+    [SerializeField] private GameObject obstacle, collectable, spike;
     [SerializeField] public float obstacleCoolDown;
 
     private float spawnTime;
-    private bool canSpawnCollectable;
+    private bool canSpawnCollectable, canSpawnSpike;
 
-    void Start()
-    {
-        
+    void Start() {
+        canSpawnSpike = true;
     }
     
     
@@ -27,11 +25,29 @@ public class ObjectSpawner : MonoBehaviour
             canSpawnCollectable = true;
         }
         else if(canSpawnCollectable) {
-            canSpawnCollectable = false;
-            Random rn = new Random();
-            if (rn.Next(0, 5) == 0) {
-                Instantiate(collectable, new Vector3(transform.position.x, transform.position.y + (obstacleCoolDown*obstacle.transform.localScale.y),0), Quaternion.identity);
+            if (canSpawnSpike) {
+                GameObject objectToSpawn; 
+                canSpawnCollectable = false;
+                Random rn = new Random();
+                int choice = rn.Next(0, 2);
+                if (choice == 0) {
+                    objectToSpawn = collectable;
+                }
+                else {
+                    objectToSpawn = spike;
+                }
+                if (rn.Next(0, 5) == 0) {
+                    Instantiate(objectToSpawn, new Vector3(transform.position.x, transform.position.y + (obstacleCoolDown*obstacle.transform.localScale.y),0), Quaternion.identity);
+                }
             }
+            else {
+                canSpawnCollectable = false;
+                Random rn = new Random();
+                if (rn.Next(0, 5) == 0) {
+                    Instantiate(collectable, new Vector3(transform.position.x, transform.position.y + (obstacleCoolDown*obstacle.transform.localScale.y),0), Quaternion.identity);
+                } 
+            }
+            
         }
     }
 
