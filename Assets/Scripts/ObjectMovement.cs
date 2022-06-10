@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class ObjectMovement : MonoBehaviour
 {
-    private int movementSpeed;
+    public int movementSpeed;
 
     void Start() {
-        movementSpeed = 5;
+        movementSpeed = 10;
+        Destroy(gameObject, 7f);
     }
 
     void Update()

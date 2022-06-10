@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class PlayerCollisions : MonoBehaviour
 {
-    [SerializeField] private int wallLayer, obstacleLayer, collectableLayer;
+    [SerializeField] private int wallLayer, obstacleLayer, collectableLayer, offScreenLayer;
+    [SerializeField] private GameManager gameManager;
+    
     private PlayerController playerController;
     
     void Start() {
@@ -20,7 +22,7 @@ public class PlayerCollisions : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.layer == wallLayer) {
-            playerController.points++;
+            gameManager.score++;
             playerController.isOnWall = true;
             playerController.xDirection *= -1;
             playerController.SetGravityScale(0);
@@ -28,14 +30,18 @@ public class PlayerCollisions : MonoBehaviour
 
         if (col.gameObject.layer == obstacleLayer) {
             //Death
-            Destroy(this.gameObject);
+            gameManager.Death();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == collectableLayer) {
-            playerController.points++;
+            gameManager.score++;
             Destroy(col.gameObject);
+        }
+        
+        if (col.gameObject.layer == offScreenLayer) {
+            gameManager.Death();
         }
     }
 
