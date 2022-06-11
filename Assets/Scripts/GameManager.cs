@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private GameObject player;
+    [SerializeField] private TMP_Text scoreText, loseText;
+    [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, panel;
     [SerializeField] private ObjectSpawner spawner;
     [SerializeField] private float minCoolDown, coolDownStep;
     [NonSerialized] public int score;
@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     void Start() {
         score = 0;
+        loseText.text = "";
     }
 
     
@@ -27,6 +28,13 @@ public class GameManager : MonoBehaviour
                 spawner.obstacleCoolDown -= coolDownStep;
                 coolDownChanged = true;
             }
+
+            if (score > 50) {
+                spikeSpawner1.SetActive(true);
+            }
+            if (score > 75) {
+                spikeSpawner2.SetActive(true);
+            }
         }
         else {
             coolDownChanged = false;
@@ -36,5 +44,7 @@ public class GameManager : MonoBehaviour
     public void Death() {
         Destroy(player);
         Time.timeScale = 0;
+        panel.SetActive(true);
+        loseText.text = "Lose !";
     }
 }

@@ -24,7 +24,7 @@ public class ObjectSpawner : MonoBehaviour
             Spawn(obstacle);
             canSpawnCollectable = true;
         }
-        else if(canSpawnCollectable) {
+        else if(canSpawnCollectable && collectable != null) {
             if (canSpawnSpike) {
                 GameObject objectToSpawn; 
                 canSpawnCollectable = false;
