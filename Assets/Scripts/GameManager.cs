@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText, loseText;
     [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, panel;
-    [SerializeField] private ObjectSpawner spawner;
+    [SerializeField] public ObjectSpawner spawner;
     [SerializeField] private float minCoolDown, coolDownStep;
     [NonSerialized] public int score;
-    
+
     private bool coolDownChanged;
 
     void Start() {
@@ -19,20 +19,20 @@ public class GameManager : MonoBehaviour
         loseText.text = "";
     }
 
-    
+
     void Update() {
         scoreText.text = score.ToString();
-        
+
         if (score != 0 && score % 10 == 0) {
             if (spawner.obstacleCoolDown > minCoolDown && !coolDownChanged) {
                 spawner.obstacleCoolDown -= coolDownStep;
                 coolDownChanged = true;
+                if (spawner.spawnRate > 2) {
+                    spawner.spawnRate--;
+                }
             }
-
-            if (score > 50) {
+            if (score > 35) {
                 spikeSpawner1.SetActive(true);
-            }
-            if (score > 75) {
                 spikeSpawner2.SetActive(true);
             }
         }

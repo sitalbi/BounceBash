@@ -12,8 +12,7 @@ public class ObjectMovement : MonoBehaviour
         Destroy(gameObject, 7f);
     }
 
-    void Update()
-    {
-        transform.position += Vector3.down * movementSpeed * Time.deltaTime; 
+    void Update() {
+        transform.position += Vector3.down * movementSpeed * Time.deltaTime;
     }
 }

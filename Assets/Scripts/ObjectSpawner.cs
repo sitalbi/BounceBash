@@ -8,50 +8,54 @@ public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject obstacle, collectable, spike;
     [SerializeField] public float obstacleCoolDown;
+    [SerializeField] private Vector2 horizontalInterval, verticalInterval;
+    [SerializeField] private int maxSpawnRate;
+
+    [NonSerialized] public int spawnRate;
 
     private float spawnTime;
-    private bool canSpawnCollectable, canSpawnSpike;
+    private bool canSpawnCollectable, canSpawnSpike, scoreMoreThan10;
+    private Vector3 collectablePosition;
+    private Random rn;
 
     void Start() {
-        canSpawnSpike = true;
+        rn = new Random();
+        spawnRate = maxSpawnRate;
+        Invoke(nameof(SetCollectablePosition), 5f);
     }
-    
-    
-    void Update()
-    {
+
+
+    void Update() {
         if (Time.time >= spawnTime + obstacleCoolDown) {
             spawnTime = Time.time;
             Spawn(obstacle);
-            canSpawnCollectable = true;
+            canSpawnSpike = true;
         }
-        else if(canSpawnCollectable && collectable != null) {
-            if (canSpawnSpike) {
-                GameObject objectToSpawn; 
-                canSpawnCollectable = false;
-                Random rn = new Random();
-                int choice = rn.Next(0, 2);
-                if (choice == 0) {
-                    objectToSpawn = collectable;
-                }
-                else {
-                    objectToSpawn = spike;
-                }
-                if (rn.Next(0, 5) == 0) {
-                    Instantiate(objectToSpawn, new Vector3(transform.position.x, transform.position.y + (obstacleCoolDown*obstacle.transform.localScale.y),0), Quaternion.identity);
-                }
-            }
-            else {
-                canSpawnCollectable = false;
-                Random rn = new Random();
-                if (rn.Next(0, 5) == 0) {
-                    Instantiate(collectable, new Vector3(transform.position.x, transform.position.y + (obstacleCoolDown*obstacle.transform.localScale.y),0), Quaternion.identity);
-                } 
-            }
+        else if (canSpawnSpike) {
+            canSpawnSpike = false;
             
+            if (rn.Next(0, 3) == 0) {
+                Instantiate(spike, new Vector3(transform.position.x, transform.position.y + (obstacleCoolDown * obstacle.transform.localScale.y), 0), Quaternion.identity);
+            }
+        }
+       
+        
+        if(canSpawnCollectable) {
+            canSpawnCollectable = false;
+            Instantiate(collectable, collectablePosition, Quaternion.identity);
         }
     }
+
 
     private void Spawn(GameObject gameObject) {
         Instantiate(gameObject, transform);
     }
+
+    public void SetCollectablePosition() {
+        canSpawnCollectable = true;
+        int x = rn.Next((int)horizontalInterval.x, (int)horizontalInterval.y);
+        int y = rn.Next((int)verticalInterval.x, (int)verticalInterval.y);
+        collectablePosition = new Vector3(x, y);
+    }
+
 }

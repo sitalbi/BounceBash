@@ -7,17 +7,15 @@ public class PlayerCollisions : MonoBehaviour
 {
     [SerializeField] private int wallLayer, obstacleLayer, collectableLayer, offScreenLayer;
     [SerializeField] private GameManager gameManager;
-    
+
     private PlayerController playerController;
-    
+
     void Start() {
         playerController = GetComponent<PlayerController>();
     }
 
-    
-    void Update()
-    {
-        
+
+    void Update() {
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
@@ -38,8 +36,9 @@ public class PlayerCollisions : MonoBehaviour
         if (col.gameObject.layer == collectableLayer) {
             gameManager.score++;
             Destroy(col.gameObject);
+            Invoke(nameof(SetCollectablePosition),1f);
         }
-        
+
         if (col.gameObject.layer == offScreenLayer) {
             gameManager.Death();
         }
@@ -51,5 +50,9 @@ public class PlayerCollisions : MonoBehaviour
             playerController.yDirection *= -1;
             playerController.SetGravityScale(playerController.originalGravityScale);
         }
+    }
+
+    private void SetCollectablePosition() {
+        gameManager.spawner.SetCollectablePosition();
     }
 }
