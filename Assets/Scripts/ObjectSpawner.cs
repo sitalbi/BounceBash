@@ -34,7 +34,7 @@ public class ObjectSpawner : MonoBehaviour
         else if (canSpawnSpike) {
             canSpawnSpike = false;
             
-            if (rn.Next(0, 3) == 0) {
+            if (rn.Next(0, 5) == 0) {
                 Instantiate(spike, new Vector3(transform.position.x, transform.position.y + (obstacleCoolDown * obstacle.transform.localScale.y), 0), Quaternion.identity);
             }
         }

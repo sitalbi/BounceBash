@@ -34,7 +34,7 @@ public class PlayerCollisions : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == collectableLayer) {
-            gameManager.score++;
+            gameManager.score+=gameManager.collectablePoints;
             Destroy(col.gameObject);
             Invoke(nameof(SetCollectablePosition),1f);
         }

@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, panel;
     [SerializeField] public ObjectSpawner spawner;
     [SerializeField] private float minCoolDown, coolDownStep;
+    [SerializeField] public int collectablePoints;
+    
     [NonSerialized] public int score;
 
     private bool coolDownChanged;
