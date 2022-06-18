@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText, loseText;
-    [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, panel;
+    [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, panel, continueButton;
     [SerializeField] public ObjectSpawner spawner;
     [SerializeField] private float minCoolDown, coolDownStep;
     [SerializeField] public int collectablePoints;
@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     void Start() {
         score = 0;
         loseText.text = "";
+        continueButton.SetActive(false);
     }
 
 
@@ -47,28 +48,43 @@ public class GameManager : MonoBehaviour
         }
 
         if (isDead) {
-            if (Input.touchCount>0) {
+            /*if (Input.touchCount>0) {
+                SceneManager.LoadScene("Scenes/MainMenu");
+            }*/
+            
+            if (Input.GetButtonDown("Jump")) {
+                if (PlayerPrefs.HasKey("HighScore")) {
+                    if (score > PlayerPrefs.GetInt("HighScore")) {
+                        PlayerPrefs.SetInt("HighScore", score);
+                    }
+                }
+                else {
+                    PlayerPrefs.SetInt("HighScore", score);
+                }
                 SceneManager.LoadScene("Scenes/MainMenu");
             }
         }
     }
 
     public void Death() {
-        if (PlayerPrefs.HasKey("HighScore")) {
-            if (score > PlayerPrefs.GetInt("HighScore")) {
-                PlayerPrefs.SetInt("HighScore", score);
-            }
-        }
-        else {
-            PlayerPrefs.SetInt("HighScore", score);
-        }
-        Destroy(player);
+        player.GetComponent<PlayerController>().Death();
         panel.SetActive(true);
+        continueButton.SetActive(true);
         loseText.text = "Lost !";
-        Invoke(nameof(Dead), 0.7f);
+        isDead = true;
+        Time.timeScale = 0;
     }
 
     private void Dead() {
         isDead = true;
+    }
+
+    public void Continue() {
+        player.GetComponent<PlayerController>().Respawn();
+        panel.SetActive(false);
+        continueButton.SetActive(false);
+        loseText.text = "";
+        Time.timeScale = 1;
+        isDead = false;
     }
 }
