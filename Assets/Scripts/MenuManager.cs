@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] private TMP_Text highscore;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -12,9 +13,8 @@ public class MenuManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        highscore.text = "Best score\n" + PlayerPrefs.GetInt("HighScore");
     }
 
     public void Play() {

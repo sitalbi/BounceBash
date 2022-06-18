@@ -54,6 +54,14 @@ public class GameManager : MonoBehaviour
     }
 
     public void Death() {
+        if (PlayerPrefs.HasKey("HighScore")) {
+            if (score > PlayerPrefs.GetInt("HighScore")) {
+                PlayerPrefs.SetInt("HighScore", score);
+            }
+        }
+        else {
+            PlayerPrefs.SetInt("HighScore", score);
+        }
         Destroy(player);
         Time.timeScale = 0;
         panel.SetActive(true);
