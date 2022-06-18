@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         }
 
         if (isDead) {
-            if (Input.GetButtonDown("Jump")) {
+            if (Input.touchCount>0) {
                 SceneManager.LoadScene("Scenes/MainMenu");
             }
         }
@@ -63,9 +63,12 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", score);
         }
         Destroy(player);
-        Time.timeScale = 0;
         panel.SetActive(true);
         loseText.text = "Lost !";
+        Invoke(nameof(Dead), 0.7f);
+    }
+
+    private void Dead() {
         isDead = true;
     }
 }

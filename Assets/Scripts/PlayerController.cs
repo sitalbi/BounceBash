@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
 
     void Update() {
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.touchCount>0) {
             jumpPressed = true;
         }
     }
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         if (isOnWall) {
             //Up or down depending on the wall
-            rb2D.velocity = new Vector2(rb2D.velocity.x, yDirection * wallSpeed);
+            rb2D.velocity = new Vector2(rb2D.velocity.x, yDirection  * wallSpeed * 50 * Time.deltaTime);
         }
     }
 
