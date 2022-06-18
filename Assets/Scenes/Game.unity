@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3848364be0378b2468ec44aa417cd913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 13
-  movementSpeed: 9
+  jumpForce: 12
+  movementSpeed: 8
   wallSpeed: 6
 --- !u!61 &225899493
 BoxCollider2D:
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 3931717537766441454, guid: 882dac6f255ecc844943f75150434525,
     type: 3}
-  collectable: {fileID: 2665832878509466892, guid: 0c6c111d7279f6b439db66bfd65a8a75,
+  collectable: {fileID: 4073285966574777191, guid: 0c6c111d7279f6b439db66bfd65a8a75,
     type: 3}
   spike: {fileID: 4837817029544065033, guid: f495a5cd02aa2074180cbb4a9276f64e, type: 3}
   obstacleCoolDown: 2
@@ -1372,8 +1372,11 @@ MonoBehaviour:
   spikeSpawner2: {fileID: 1284204419}
   panel: {fileID: 1894317523}
   spawner: {fileID: 374580180}
-  minCoolDown: 0.75
+  minCoolDown: 0.6
   coolDownStep: 0.25
+  collectablePoints: 2
+  objectMovement: {fileID: 6801935649371822814, guid: 882dac6f255ecc844943f75150434525,
+    type: 3}
 --- !u!4 &2046310192
 Transform:
   m_ObjectHideFlags: 0
