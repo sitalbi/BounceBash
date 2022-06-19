@@ -47,11 +47,12 @@ public class PlayerController : MonoBehaviour
                 rb2D.gravityScale = originalGravityScale;
             }
             rb2D.velocity = new Vector2(xDirection * movementSpeed * 50 * Time.deltaTime,
-                50 * jumpForce * Time.deltaTime);
+                    50 * jumpForce * Time.deltaTime);
+
             jumpPressed = false;
         }
 
-        if (isOnWall) {
+        if (isOnWall && !jumpPressed) {
             //Up or down depending on the wall
             rb2D.velocity = new Vector2(rb2D.velocity.x, yDirection  * wallSpeed * 50 * Time.deltaTime);
         }

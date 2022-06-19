@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
                     if (Input.touches[0].phase == TouchPhase.Began) {
                         screenPressed++;
                     }
-                    if (screenPressed > 2 && !buttonClicked) {
+                    if (screenPressed > 1 && !buttonClicked) {
                         Menu();
                     }
                 }
@@ -71,14 +71,11 @@ public class GameManager : MonoBehaviour
                 if (Input.touchCount > 0) {
                     if (Input.touches[0].phase == TouchPhase.Began) {
                         screenPressed++;
-                    } if (screenPressed > 2) {
+                    } if (screenPressed > 1) {
                         Menu();
                     }
                 }
             }
-        }
-        else {
-            buttonClicked = true;
         }
     }
 
