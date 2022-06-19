@@ -13,15 +13,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float minCoolDown, coolDownStep;
     [SerializeField] public int collectablePoints;
     [SerializeField] private ObjectMovement objectMovement;
-    
+
     [NonSerialized] public int score;
 
-    private bool coolDownChanged, isDead;
+    private bool coolDownChanged, isDead, canContinue;
+    private bool buttonClicked;
+
+    private int screenPressed;
 
     void Start() {
         score = 0;
         loseText.text = "";
         continueButton.SetActive(false);
+        canContinue = true;
+        screenPressed = 0;
     }
 
 
@@ -37,7 +42,11 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
-            
+
+            if (score > 10) {
+                spawner.scoreMoreThan10 = true;
+            }
+
             if (score > 35) {
                 spikeSpawner1.SetActive(true);
                 spikeSpawner2.SetActive(true);
@@ -48,28 +57,37 @@ public class GameManager : MonoBehaviour
         }
 
         if (isDead) {
-            /*if (Input.touchCount>0) {
-                SceneManager.LoadScene("Scenes/MainMenu");
-            }*/
-            
-            if (Input.GetButtonDown("Jump")) {
-                if (PlayerPrefs.HasKey("HighScore")) {
-                    if (score > PlayerPrefs.GetInt("HighScore")) {
-                        PlayerPrefs.SetInt("HighScore", score);
+            if(canContinue) {
+                if (Input.touchCount > 0) {
+                    if (Input.touches[0].phase == TouchPhase.Began) {
+                        screenPressed++;
+                    }
+                    if (screenPressed > 2 && !buttonClicked) {
+                        Menu();
                     }
                 }
-                else {
-                    PlayerPrefs.SetInt("HighScore", score);
-                }
-                SceneManager.LoadScene("Scenes/MainMenu");
             }
+            else {
+                if (Input.touchCount > 0) {
+                    if (Input.touches[0].phase == TouchPhase.Began) {
+                        screenPressed++;
+                    } if (screenPressed > 2) {
+                        Menu();
+                    }
+                }
+            }
+        }
+        else {
+            buttonClicked = true;
         }
     }
 
     public void Death() {
         player.GetComponent<PlayerController>().Death();
         panel.SetActive(true);
-        continueButton.SetActive(true);
+        if (canContinue) {
+            continueButton.SetActive(true);
+        }
         loseText.text = "Lost !";
         isDead = true;
         Time.timeScale = 0;
@@ -80,11 +98,26 @@ public class GameManager : MonoBehaviour
     }
 
     public void Continue() {
+        buttonClicked = true;
+        canContinue = false;
         player.GetComponent<PlayerController>().Respawn();
         panel.SetActive(false);
         continueButton.SetActive(false);
         loseText.text = "";
         Time.timeScale = 1;
         isDead = false;
+    }
+
+    private void Menu() {
+        if (PlayerPrefs.HasKey("HighScore")) {
+            if (score > PlayerPrefs.GetInt("HighScore")) {
+                PlayerPrefs.SetInt("HighScore", score);
+            }
+        }
+        else {
+            PlayerPrefs.SetInt("HighScore", score);
+        }
+
+        SceneManager.LoadScene("Scenes/MainMenu");
     }
 }

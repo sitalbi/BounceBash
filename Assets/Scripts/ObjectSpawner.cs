@@ -12,9 +12,10 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private int maxSpawnRate;
 
     [NonSerialized] public int spawnRate;
+    [NonSerialized] public bool scoreMoreThan10;
 
     private float spawnTime;
-    private bool canSpawnCollectable, canSpawnSpike, scoreMoreThan10;
+    private bool canSpawnCollectable, canSpawnSpike;
     private Vector3 collectablePosition;
     private Random rn;
 
@@ -29,7 +30,9 @@ public class ObjectSpawner : MonoBehaviour
         if (Time.time >= spawnTime + obstacleCoolDown) {
             spawnTime = Time.time;
             Spawn(obstacle);
-            canSpawnSpike = true;
+            if (scoreMoreThan10) {
+                canSpawnSpike = true;
+            }
         }
         else if (canSpawnSpike) {
             canSpawnSpike = false;

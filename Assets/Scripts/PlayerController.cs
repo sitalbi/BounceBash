@@ -29,14 +29,16 @@ public class PlayerController : MonoBehaviour
 
 
     void Update() {
-        /*if (Input.touchCount>0) {
+        if (Input.touchCount>0) {
+            if (Input.touches[0].phase == TouchPhase.Began) {
+                jumpPressed = true;
+            }
+        }
+
+
+        /*if (Input.GetButtonDown("Jump")) {
             jumpPressed = true;
         }*/
-
-
-        if (Input.GetButtonDown("Jump")) {
-            jumpPressed = true;
-        }
     }
 
     void FixedUpdate() {
