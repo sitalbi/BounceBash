@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text scoreText, loseText;
-    [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, panel, continueButton;
+    [SerializeField] private TMP_Text scoreText, yourScoreText, bestScoretext;
+    [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, inGameUI, gameOverUI, continueButton;
     [SerializeField] public ObjectSpawner spawner;
     [SerializeField] private float minCoolDown, coolDownStep;
     [SerializeField] public int collectablePoints;
@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
 
     void Start() {
         score = 0;
-        loseText.text = "";
-        continueButton.SetActive(false);
+        gameOverUI.SetActive(false);
+        inGameUI.SetActive(true);
         canContinue = true;
         screenPressed = 0;
     }
@@ -55,37 +55,21 @@ public class GameManager : MonoBehaviour
         else {
             coolDownChanged = false;
         }
-
-        if (isDead) {
-            if(canContinue) {
-                if (Input.touchCount > 0) {
-                    if (Input.touches[0].phase == TouchPhase.Began) {
-                        screenPressed++;
-                    }
-                    if (screenPressed > 1 && !buttonClicked) {
-                        Menu();
-                    }
-                }
-            }
-            else {
-                if (Input.touchCount > 0) {
-                    if (Input.touches[0].phase == TouchPhase.Began) {
-                        screenPressed++;
-                    } if (screenPressed > 1) {
-                        Menu();
-                    }
-                }
-            }
-        }
     }
 
     public void Death() {
         player.GetComponent<PlayerController>().Death();
-        panel.SetActive(true);
-        if (canContinue) {
+        gameOverUI.SetActive(true);
+        inGameUI.SetActive(false);
+        if (!canContinue) {
+            continueButton.SetActive(false);
+        }
+        else {
             continueButton.SetActive(true);
         }
-        loseText.text = "Lost !";
+
+        yourScoreText.text = "Your score: " + score;
+        bestScoretext.text = "Best score: " + PlayerPrefs.GetInt("HighScore");
         isDead = true;
         Time.timeScale = 0;
     }
@@ -98,14 +82,13 @@ public class GameManager : MonoBehaviour
         buttonClicked = true;
         canContinue = false;
         player.GetComponent<PlayerController>().Respawn();
-        panel.SetActive(false);
-        continueButton.SetActive(false);
-        loseText.text = "";
+        gameOverUI.SetActive(false);
+        inGameUI.SetActive(true);
         Time.timeScale = 1;
         isDead = false;
     }
 
-    private void Menu() {
+    public void Menu() {
         if (PlayerPrefs.HasKey("HighScore")) {
             if (score > PlayerPrefs.GetInt("HighScore")) {
                 PlayerPrefs.SetInt("HighScore", score);
@@ -113,6 +96,16 @@ public class GameManager : MonoBehaviour
         }
         else {
             PlayerPrefs.SetInt("HighScore", score);
+        }
+
+        int 
+            coins = (score / 5) + 1;
+        if (PlayerPrefs.HasKey("Coins")) {
+            int oldAmount = PlayerPrefs.GetInt("Coins");
+            PlayerPrefs.SetInt("Coins", oldAmount+coins);
+        }
+        else {
+            PlayerPrefs.SetInt("Coins", coins);
         }
 
         SceneManager.LoadScene("Scenes/MainMenu");
