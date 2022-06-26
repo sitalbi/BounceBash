@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int jumpForce, movementSpeed, wallSpeed;
-    [SerializeField] private Sprite defaultSprite;
+    [SerializeField] private SkinManager skinManager;
+    
+    private Sprite defaultSprite;
 
     private Rigidbody2D rb2D;
 
@@ -25,6 +28,8 @@ public class PlayerController : MonoBehaviour
         yDirection = 1;
         originalGravityScale = rb2D.gravityScale;
         rb2D.gravityScale = 0;
+        defaultSprite = skinManager.skinList[PlayerPrefs.GetInt("skinId")];
+        GetComponent<SpriteRenderer>().sprite = defaultSprite;
     }
 
 
@@ -34,7 +39,6 @@ public class PlayerController : MonoBehaviour
                 jumpPressed = true;
             }
         }
-
 
         /*if (Input.GetButtonDown("Jump")) {
             jumpPressed = true;
