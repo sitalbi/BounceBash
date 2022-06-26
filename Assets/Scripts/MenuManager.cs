@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text highscore, coins;
+    [SerializeField] private GameObject mainMenu, settingsMenu;
     
     // Start is called before the first frame update
     void Start()
     {
+        mainMenu.SetActive(true);
+        settingsMenu.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -24,5 +27,15 @@ public class MenuManager : MonoBehaviour
 
     public void Play() {
         SceneManager.LoadScene("Scenes/Game");
+    }
+
+    public void Settings() {
+        mainMenu.SetActive(false);
+        settingsMenu.SetActive(true);
+    }
+
+    public void Menu() {
+        mainMenu.SetActive(true);
+        settingsMenu.SetActive(false);
     }
 }
