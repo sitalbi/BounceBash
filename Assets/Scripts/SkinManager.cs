@@ -13,8 +13,9 @@ public class SkinManager : MonoBehaviour
     [SerializeField] private GameObject selectedIcon, lockedIcon;
     [SerializeField] private TMP_Text selectButtonText;
 
-    private int skinIndex;
+    [NonSerialized] public int skinIndex;
     private SkinObject displayedSkin;
+    private string skinBool;
 
     void Start()
     {
@@ -22,12 +23,24 @@ public class SkinManager : MonoBehaviour
             PlayerPrefs.SetInt("skinId", 0);
         }
         skinIndex = PlayerPrefs.GetInt("skinId");
+        PlayerPrefsExtra.SetList("skinList",skinList);
         displayedSkin = skinList[skinIndex];
+
+        for (int i = 0; i < skinList.Count; i++) {
+            if (!PlayerPrefsExtra.GetBool("skin" + i)) {
+                if (i == 0) {
+                    PlayerPrefsExtra.SetBool("skin" + i,true);
+                }
+                else {
+                    PlayerPrefsExtra.SetBool("skin" + i,false);
+                } 
+            }
+        }
     }
 
     
-    void Update()
-    {
+    void Update() {
+        skinBool = "skin" + skinIndex;
         displayedImage.sprite = displayedSkin.sprite;
         if (skinIndex == PlayerPrefs.GetInt("skinId")) {
             selectedIcon.SetActive(true);
@@ -36,7 +49,7 @@ public class SkinManager : MonoBehaviour
             selectedIcon.SetActive(false);
         }
 
-        if (displayedSkin.acquired == false) {
+        if (PlayerPrefsExtra.GetBool(skinBool) == false) {
             selectButtonText.text = "Buy " + displayedSkin.price;
             lockedIcon.SetActive(true);
         }
@@ -53,7 +66,7 @@ public class SkinManager : MonoBehaviour
         else {
             skinIndex = 0;
         }
-        displayedSkin = skinList[skinIndex];
+        displayedSkin = PlayerPrefsExtra.GetList<SkinObject>("skinList")[skinIndex];
     }
     
     public void LeftButton() {
@@ -63,13 +76,13 @@ public class SkinManager : MonoBehaviour
         else {
             skinIndex = skinList.Count-1;
         }
-        displayedSkin = skinList[skinIndex];
+        displayedSkin = PlayerPrefsExtra.GetList<SkinObject>("skinList")[skinIndex];
     }
 
     public void SelectSkin() {
-        if (displayedSkin.acquired == false) {
+        if (PlayerPrefsExtra.GetBool(skinBool) == false) {
             if (PlayerPrefs.GetInt("Coins") >= displayedSkin.price) {
-                displayedSkin.acquired = true;
+                PlayerPrefsExtra.SetBool("skin" + skinIndex,true);
                 int coinsAmount = PlayerPrefs.GetInt("Coins");
                 PlayerPrefs.SetInt("Coins", coinsAmount-displayedSkin.price);
             }

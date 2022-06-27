@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int jumpForce, movementSpeed, wallSpeed;
-    [SerializeField] private SkinManager skinManager;
 
     private Rigidbody2D rb2D;
 
@@ -26,7 +25,7 @@ public class PlayerController : MonoBehaviour
         yDirection = 1;
         originalGravityScale = rb2D.gravityScale;
         rb2D.gravityScale = 0;
-        GetComponent<SpriteRenderer>().sprite = skinManager.skinList[PlayerPrefs.GetInt("skinId")].sprite;
+        GetComponent<SpriteRenderer>().sprite = PlayerPrefsExtra.GetList<SkinObject>("skinList")[PlayerPrefs.GetInt("skinId")].sprite;
     }
 
 
