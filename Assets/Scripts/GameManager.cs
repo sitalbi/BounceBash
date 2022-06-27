@@ -7,19 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text scoreText, yourScoreText, bestScoretext;
+    [SerializeField] private TMP_Text scoreText, yourScoreText, bestScoretext, coinText;
     [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, inGameUI, gameOverUI, continueButton;
     [SerializeField] public ObjectSpawner spawner;
     [SerializeField] private float minCoolDown, coolDownStep;
     [SerializeField] public int collectablePoints;
-    [SerializeField] private ObjectMovement objectMovement;
 
     [NonSerialized] public int score;
 
     private bool coolDownChanged, isDead, canContinue;
     private bool buttonClicked;
 
-    private int screenPressed;
+    private int screenPressed, coins;
 
     void Start() {
         score = 0;
@@ -67,7 +66,8 @@ public class GameManager : MonoBehaviour
         else {
             continueButton.SetActive(true);
         }
-
+        coins = (score / 5) + 1;
+        coinText.text = "+" + coins;
         yourScoreText.text = "Your score: " + score;
         bestScoretext.text = "Best score: " + PlayerPrefs.GetInt("HighScore");
         isDead = true;
@@ -97,9 +97,7 @@ public class GameManager : MonoBehaviour
         else {
             PlayerPrefs.SetInt("HighScore", score);
         }
-
-        int 
-            coins = (score / 5) + 1;
+        
         if (PlayerPrefs.HasKey("Coins")) {
             int oldAmount = PlayerPrefs.GetInt("Coins");
             PlayerPrefs.SetInt("Coins", oldAmount+coins);

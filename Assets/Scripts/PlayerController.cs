@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int jumpForce, movementSpeed, wallSpeed;
     [SerializeField] private SkinManager skinManager;
-    
-    private Sprite defaultSprite;
 
     private Rigidbody2D rb2D;
 
@@ -28,8 +26,7 @@ public class PlayerController : MonoBehaviour
         yDirection = 1;
         originalGravityScale = rb2D.gravityScale;
         rb2D.gravityScale = 0;
-        defaultSprite = skinManager.skinList[PlayerPrefs.GetInt("skinId")];
-        GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        GetComponent<SpriteRenderer>().sprite = skinManager.skinList[PlayerPrefs.GetInt("skinId")].sprite;
     }
 
 
@@ -71,12 +68,12 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Death() {
-        GetComponent<SpriteRenderer>().sprite = null;
+        gameObject.SetActive(false);
         rb2D.velocity = Vector2.zero;
     }
     
     public void Respawn() {
-        GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        gameObject.SetActive(true);
         transform.position = startPos;
         xDirection = 1;
         yDirection = 1;
