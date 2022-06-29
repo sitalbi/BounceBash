@@ -1030,6 +1030,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a85dc8be79adeda42a9c5ecf5238afba, type: 2}
   - {fileID: 11400000, guid: 76ea41521f3c14f45b7236f3dad4de75, type: 2}
   - {fileID: 11400000, guid: 9d8a5b9d383deb04d83e6002dd20b608, type: 2}
+  - {fileID: 11400000, guid: 601d554361ade604190681cce966fafb, type: 2}
   displayedImage: {fileID: 1909527522292419455}
   selectedIcon: {fileID: 2807486368093858798}
   lockedIcon: {fileID: 5677811054112894699}

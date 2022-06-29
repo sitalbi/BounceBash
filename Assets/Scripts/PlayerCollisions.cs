@@ -7,6 +7,7 @@ public class PlayerCollisions : MonoBehaviour
 {
     [SerializeField] private int wallLayer, obstacleLayer, collectableLayer, offScreenLayer;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private AudioSource coinSound, scoreSound;
 
     private PlayerController playerController;
 
@@ -24,6 +25,7 @@ public class PlayerCollisions : MonoBehaviour
             playerController.isOnWall = true;
             playerController.xDirection *= -1;
             playerController.SetGravityScale(0);
+            scoreSound.Play(0);
         }
 
         if (col.gameObject.layer == obstacleLayer) {
@@ -37,6 +39,7 @@ public class PlayerCollisions : MonoBehaviour
             gameManager.score+=gameManager.collectablePoints;
             Destroy(col.gameObject);
             Invoke(nameof(SetCollectablePosition),1f);
+            coinSound.Play(0);
         }
 
         if (col.gameObject.layer == offScreenLayer) {
