@@ -100,7 +100,9 @@ public class GameManager : MonoBehaviour
         
         if (PlayerPrefs.HasKey("Coins")) {
             int oldAmount = PlayerPrefs.GetInt("Coins");
-            PlayerPrefs.SetInt("Coins", oldAmount+coins);
+            if (oldAmount < 999) {
+                PlayerPrefs.SetInt("Coins", oldAmount+coins);
+            }
         }
         else {
             PlayerPrefs.SetInt("Coins", coins);

@@ -10,7 +10,7 @@ public class SkinManager : MonoBehaviour
 {
     [SerializeField] public List<SkinObject> skinList;
     [SerializeField] private Image displayedImage;
-    [SerializeField] private GameObject selectedIcon, lockedIcon;
+    [SerializeField] private GameObject selectedIcon, lockedIcon, coinImage;
     [SerializeField] private TMP_Text selectButtonText;
 
     [NonSerialized] public int skinIndex;
@@ -51,11 +51,17 @@ public class SkinManager : MonoBehaviour
 
         if (PlayerPrefsExtra.GetBool(skinBool) == false) {
             selectButtonText.text = "Buy " + displayedSkin.price;
+            selectButtonText.alignment = TextAlignmentOptions.Left;
+            selectButtonText.margin = new Vector4(20,0,0,0);
+            coinImage.SetActive(true);
             lockedIcon.SetActive(true);
         }
         else {
             selectButtonText.text = "Select";
+            selectButtonText.alignment = TextAlignmentOptions.Center;
+            selectButtonText.margin = Vector4.zero;
             lockedIcon.SetActive(false);
+            coinImage.SetActive(false);
         }
     }
 
