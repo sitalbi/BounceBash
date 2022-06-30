@@ -7,12 +7,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TMP_Text highscore, coins;
     [SerializeField] private GameObject mainMenu, settingsMenu, skinMenu, coinsObject;
     
-    // Start is called before the first frame update
     void Start() {
         Time.timeScale = 1f;
     }
-
-    // Update is called once per frame
+    
     void Update() {
         if (highscore != null) {
             highscore.text = "Best score\n" + PlayerPrefs.GetInt("HighScore");
@@ -37,6 +35,7 @@ public class MenuManager : MonoBehaviour
         settingsMenu.SetActive(false);
         skinMenu.SetActive(false);
         coinsObject.SetActive(true);
+        skinMenu.GetComponent<SkinManager>().InitializeDisplayedSkin();
     }
     
     public void Skins() {

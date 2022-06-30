@@ -13,7 +13,7 @@ public class SkinManager : MonoBehaviour
     [SerializeField] private GameObject selectedIcon, lockedIcon, coinImage;
     [SerializeField] private TMP_Text selectButtonText;
 
-    [NonSerialized] public int skinIndex;
+    private int skinIndex;
     private SkinObject displayedSkin;
     private string skinBool;
 
@@ -22,9 +22,7 @@ public class SkinManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("skinId")) {
             PlayerPrefs.SetInt("skinId", 0);
         }
-        skinIndex = PlayerPrefs.GetInt("skinId");
-        PlayerPrefsExtra.SetList("skinList",skinList);
-        displayedSkin = skinList[skinIndex];
+        InitializeDisplayedSkin();
 
         for (int i = 0; i < skinList.Count; i++) {
             if (!PlayerPrefsExtra.GetBool("skin" + i)) {
@@ -97,5 +95,11 @@ public class SkinManager : MonoBehaviour
             }
         }
         PlayerPrefs.SetInt("skinId", skinIndex);
+    }
+
+    public void InitializeDisplayedSkin() {
+        skinIndex = PlayerPrefs.GetInt("skinId");
+        PlayerPrefsExtra.SetList("skinList",skinList);
+        displayedSkin = skinList[skinIndex];
     }
 }
