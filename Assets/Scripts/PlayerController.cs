@@ -33,8 +33,7 @@ public class PlayerController : MonoBehaviour
     void Update() {
         if (Input.touchCount>0) {
             if (Input.touches[0].phase == TouchPhase.Began) {
-                jumpPressed = true;
-                
+                if(canMove) jumpPressed = true;
             }
         }
 
@@ -83,5 +82,9 @@ public class PlayerController : MonoBehaviour
         isOnWall = false;
         jumpPressed = false;
         canMove = false;
+    }
+
+    public void CanMove() {
+        canMove = true;
     }
 }
