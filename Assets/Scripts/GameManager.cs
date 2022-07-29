@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText, yourScoreText, bestScoretext, coinText;
     [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, inGameUI, gameOverUI, continueButton;
+    [SerializeField] private UILeanTween tween;
     [SerializeField] public ObjectSpawner spawner;
     [SerializeField] private float minCoolDown, coolDownStep;
     [SerializeField] public int collectablePoints;
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
         player.GetComponent<PlayerController>().Death();
         gameOverUI.SetActive(true);
         inGameUI.SetActive(false);
+        tween.LevelComplete();
         if (!canContinue) {
             continueButton.SetActive(false);
         }
@@ -68,8 +70,8 @@ public class GameManager : MonoBehaviour
         }
         coins = (score / 5) + 1;
         coinText.text = "+" + coins;
-        yourScoreText.text = "Your score: " + score;
-        bestScoretext.text = "Best score: " + PlayerPrefs.GetInt("HighScore");
+        yourScoreText.text = score.ToString();
+        bestScoretext.text = PlayerPrefs.GetInt("HighScore") >= score ? "Best score: " + PlayerPrefs.GetInt("HighScore") : "New Best";
         isDead = true;
         Time.timeScale = 0;
     }
@@ -84,6 +86,7 @@ public class GameManager : MonoBehaviour
         player.GetComponent<PlayerController>().Respawn();
         gameOverUI.SetActive(false);
         inGameUI.SetActive(true);
+        tween.Initialize();
         Time.timeScale = 1;
         isDead = false;
     }
