@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int jumpForce, movementSpeed, wallSpeed;
+    [SerializeField] private AudioSource jumpAudio;
 
     private Rigidbody2D rb2D;
 
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
     void Update() {
         if (Input.touchCount>0) {
             if (Input.touches[0].phase == TouchPhase.Began) {
-                jumpPressed = true;
+                if(canMove) jumpPressed = true;
             }
         }
 
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
                     50 * jumpForce * Time.deltaTime);
 
             jumpPressed = false;
+            jumpAudio.Play(0);
         }
 
         if (isOnWall && !jumpPressed) {
@@ -80,5 +82,9 @@ public class PlayerController : MonoBehaviour
         isOnWall = false;
         jumpPressed = false;
         canMove = false;
+    }
+
+    public void CanMove() {
+        canMove = true;
     }
 }

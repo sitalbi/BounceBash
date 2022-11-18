@@ -6,13 +6,12 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text highscore, coins;
     [SerializeField] private GameObject mainMenu, settingsMenu, skinMenu, coinsObject;
+    [SerializeField] private UIMenuTween tween;
     
-    // Start is called before the first frame update
     void Start() {
         Time.timeScale = 1f;
     }
-
-    // Update is called once per frame
+    
     void Update() {
         if (highscore != null) {
             highscore.text = "Best score\n" + PlayerPrefs.GetInt("HighScore");
@@ -27,21 +26,25 @@ public class MenuManager : MonoBehaviour
     }
 
     public void Settings() {
-        mainMenu.SetActive(false);
         settingsMenu.SetActive(true);
-        coinsObject.SetActive(false);
+        tween.ChangeMenuTransition(settingsMenu);
     }
 
     public void Menu() {
         mainMenu.SetActive(true);
-        settingsMenu.SetActive(false);
-        skinMenu.SetActive(false);
+        tween.GoBackToMenu();
         coinsObject.SetActive(true);
+        skinMenu.GetComponent<SkinManager>().InitializeDisplayedSkin();
     }
     
     public void Skins() {
-        mainMenu.SetActive(false);
         skinMenu.SetActive(true);
+        tween.ChangeMenuTransition(skinMenu);
+    }
+
+    public void DeactivateMenus() {
+        settingsMenu.SetActive(false);
+        skinMenu.SetActive(false);
     }
 
     public void ClearPlayerPrefs() {

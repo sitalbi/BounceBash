@@ -7,6 +7,7 @@ public class PlayerCollisions : MonoBehaviour
 {
     [SerializeField] private int wallLayer, obstacleLayer, collectableLayer, offScreenLayer;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private AudioSource scoreSound;
 
     private PlayerController playerController;
 
@@ -24,6 +25,7 @@ public class PlayerCollisions : MonoBehaviour
             playerController.isOnWall = true;
             playerController.xDirection *= -1;
             playerController.SetGravityScale(0);
+            scoreSound.Play(0);
         }
 
         if (col.gameObject.layer == obstacleLayer) {
@@ -35,7 +37,7 @@ public class PlayerCollisions : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == collectableLayer) {
             gameManager.score+=gameManager.collectablePoints;
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<CollectableController>().Touched();
             Invoke(nameof(SetCollectablePosition),1f);
         }
 
