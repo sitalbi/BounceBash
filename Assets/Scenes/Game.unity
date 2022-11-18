@@ -1626,8 +1626,9 @@ MonoBehaviour:
   best: {fileID: 1992812916}
   wallL: {fileID: 1922775249}
   wallR: {fileID: 1535883455}
+  inGameScore: {fileID: 1351117152}
   transitionTime: 0.5
-  playerController: {fileID: 0}
+  playerController: {fileID: 225899492}
 --- !u!4 &1350299574
 Transform:
   m_ObjectHideFlags: 0
