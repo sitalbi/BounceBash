@@ -12,6 +12,7 @@ public class SkinManager : MonoBehaviour
     [SerializeField] private Image displayedImage;
     [SerializeField] private GameObject selectedIcon, lockedIcon, coinImage;
     [SerializeField] private TMP_Text selectButtonText;
+    [SerializeField] private AudioSource coin, select;
 
     private int skinIndex;
     private SkinObject displayedSkin;
@@ -89,10 +90,16 @@ public class SkinManager : MonoBehaviour
                 PlayerPrefsExtra.SetBool("skin" + skinIndex,true);
                 int coinsAmount = PlayerPrefs.GetInt("Coins");
                 PlayerPrefs.SetInt("Coins", coinsAmount-displayedSkin.price);
+                coin.Play();
+                
             }
             else {
                 return;
             }
+        }
+        else
+        {
+            if(PlayerPrefs.GetInt("skinId") != skinIndex) select.Play();
         }
         PlayerPrefs.SetInt("skinId", skinIndex);
     }
