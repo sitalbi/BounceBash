@@ -7,3 +7,4 @@
 - background animé
 - menu paramètre
 - skins
+- pubs
