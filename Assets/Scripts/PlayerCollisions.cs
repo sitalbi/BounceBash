@@ -36,7 +36,7 @@ public class PlayerCollisions : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.layer == collectableLayer) {
-            gameManager.score+=gameManager.collectablePoints;
+            gameManager.EarnCoin();
             col.gameObject.GetComponent<CollectableController>().Touched();
             Invoke(nameof(SetCollectablePosition),1f);
         }

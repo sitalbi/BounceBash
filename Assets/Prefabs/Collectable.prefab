@@ -162,7 +162,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: + 2
+  m_text: + 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -265,7 +265,6 @@ GameObject:
   - component: {fileID: 733815572829665195}
   - component: {fileID: 2661350577345922318}
   - component: {fileID: 2011549137636478385}
-  - component: {fileID: 2955190183854589323}
   - component: {fileID: 8636914249145747296}
   - component: {fileID: 4960671332965296381}
   m_Layer: 10
@@ -284,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 4073285966574777191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -26.98, y: -17.048, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1.567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2699498940117876033}
   m_Father: {fileID: 0}
@@ -329,8 +328,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3600098460352613636, guid: ceb3058e83f94a24389f66068e5cbe36,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: b12edf8b1c03fc7428107f94f6669d8a, type: 3}
   m_Color: {r: 1, g: 0.8537736, b: 0.8537736, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -354,38 +352,19 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0018684529, y: -0.011211202}
+  m_Offset: {x: 0.011059761, y: -0.024143219}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13675556, y: 0.16291404}
+  m_Size: {x: 0.9902592, y: 1.1715927}
   m_EdgeRadius: 0
---- !u!95 &2955190183854589323
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4073285966574777191}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c75a4a01753697744b3ede83ff095c07, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8636914249145747296
 MonoBehaviour:
   m_ObjectHideFlags: 0

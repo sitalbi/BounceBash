@@ -18,8 +18,9 @@ public class GameManager : MonoBehaviour
 
     private bool coolDownChanged, isDead, canContinue;
     private bool buttonClicked;
+    private CoinsManager coinsManager;
 
-    private int screenPressed, coins;
+    private int screenPressed, coinsNumber;
 
     void Start() {
         score = 0;
@@ -68,8 +69,8 @@ public class GameManager : MonoBehaviour
         else {
             continueButton.SetActive(true);
         }
-        coins = (score / 5) + 1;
-        coinText.text = "+" + coins;
+        coinText.text = "+" + coinsNumber;
+        AddCoins(coinsNumber);
         yourScoreText.text = score.ToString();
         bestScoretext.text = PlayerPrefs.GetInt("HighScore") >= score ? "Best score: " + PlayerPrefs.GetInt("HighScore") : "New Best";
         isDead = true;
@@ -104,13 +105,25 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("Coins")) {
             int oldAmount = PlayerPrefs.GetInt("Coins");
             if (oldAmount < 999) {
-                PlayerPrefs.SetInt("Coins", oldAmount+coins);
+                PlayerPrefs.SetInt("Coins", oldAmount+coinsNumber);
             }
         }
         else {
-            PlayerPrefs.SetInt("Coins", coins);
+            PlayerPrefs.SetInt("Coins", coinsNumber);
         }
 
         SceneManager.LoadScene("Scenes/MainMenu");
+    }
+
+    public void EarnCoin()
+    {
+        coinsNumber++;
+    }
+    
+    
+
+    public void AddCoins (int amount)
+    {
+        coinsManager.Animate(coinText.transform.position, amount);
     }
 }

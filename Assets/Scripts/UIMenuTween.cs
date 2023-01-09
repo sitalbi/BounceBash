@@ -24,7 +24,7 @@ public class UIMenuTween : MonoBehaviour
         LeanTween.scale(secondaryMenu, Vector3.zero, 0);
         LeanTween.moveLocal(logo, new Vector3(0,700), transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         LeanTween.scale(playButton, new Vector3(0,0), transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
-        LeanTween.move(coins, new Vector3(coinsOriginalPosition.x,-700), transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
+        //LeanTween.move(coins, new Vector3(coinsOriginalPosition.x,-700), transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         LeanTween.moveLocal(bottomButtons, new Vector3(bottomOriginalPosition.x,-700), transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         LeanTween.scale(secondaryMenu, Vector3.one, 0).setDelay(transitionTime);
     }
