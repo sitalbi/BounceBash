@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 public class CoinsManager : MonoBehaviour
 {
 	//References
 	[Header ("UI references")]
 	[SerializeField] TMP_Text coinUIText;
-	[SerializeField] GameObject animatedCoinPrefab;
+	[SerializeField] TMP_Text earnedCoinUIText;
+	[SerializeField] GameObject coinEarnedUI;
+	//[SerializeField] GameObject animatedCoinPrefab;
 	[SerializeField] Transform target;
+	[SerializeField] GameObject animatedCoinPrefab;
+	[SerializeField] private GameObject canvas;
 
 	[Space]
 	[Header ("Available coins : (coins to pool)")]
@@ -20,17 +26,15 @@ public class CoinsManager : MonoBehaviour
 	[Space]
 	[Header ("Animation settings")]
 	[SerializeField] [Range (0.5f, 0.9f)] float minAnimDuration;
-	[SerializeField] [Range (0.9f, 2f)] float maxAnimDuration;
+	[SerializeField] [Range (1f, 4f)] float maxAnimDuration;
 
 	[SerializeField] LeanTweenType easeType;
 	[SerializeField] float spread;
 
 	Vector3 targetPosition;
+	
 
-
-	private int _c = 0;
-
-	void Awake ()
+	void Start ()
 	{
 		targetPosition = target.position;
 
@@ -42,10 +46,17 @@ public class CoinsManager : MonoBehaviour
 	{
 		GameObject coin;
 		for (int i = 0; i < maxCoins; i++) {
-			coin = Instantiate (animatedCoinPrefab);
-			coin.transform.parent = transform;
-			coin.SetActive (false);
+			coin = Instantiate(animatedCoinPrefab);
+			coin.transform.SetParent(canvas.transform);
+			coin.SetActive(false);
 			coinsQueue.Enqueue (coin);
+		}
+	}
+
+	void Update()
+	{
+		if (coinUIText != null) {
+			coinUIText.text = PlayerPrefs.GetInt("Coins").ToString();
 		}
 	}
 
@@ -56,17 +67,34 @@ public class CoinsManager : MonoBehaviour
 			if (coinsQueue.Count > 0) {
 				//extract a coin from the pool
 				GameObject coin = coinsQueue.Dequeue ();
-				coin.SetActive (true);
+				coin.SetActive(true);
 
 				//move coin to the collected coin pos
 				coin.transform.position = collectedCoinPosition + new Vector3 (Random.Range (-spread, spread), 0f, 0f);
 
+				
+				
 				//animate coin to target position
 				float duration = Random.Range (minAnimDuration, maxAnimDuration);
-				coin.transform.LeanMove(targetPosition, duration).setEase(easeType).setOnComplete(() => {
-					//executes whenever coin reach target position
-					coin.SetActive (false);
+				coin.transform.LeanMove(targetPosition,duration).setEase(easeType).setIgnoreTimeScale(true).setOnComplete(() =>
+				{
+					coin.SetActive(false);
 					coinsQueue.Enqueue (coin);
+					if (PlayerPrefs.HasKey("Coins")) {
+						int oldAmount = PlayerPrefs.GetInt("Coins");
+						if (oldAmount < 999) {
+							PlayerPrefs.SetInt("Coins", oldAmount+1);
+						}
+					} else {
+						PlayerPrefs.SetInt("Coins", 1);
+					}
+					
+					earnedCoinUIText.text = "+ " + (amount-i);
+
+					if (i == amount - 1)
+					{
+						coinEarnedUI.SetActive(false);
+					}
 				});
 			}
 		}

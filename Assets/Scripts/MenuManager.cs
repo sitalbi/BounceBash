@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text highscore, coins;
+    [SerializeField] private TMP_Text highscore;
     [SerializeField] private GameObject mainMenu, settingsMenu, skinMenu, coinsObject;
     [SerializeField] private UIMenuTween tween;
     
@@ -16,9 +16,7 @@ public class MenuManager : MonoBehaviour
         if (highscore != null) {
             highscore.text = "Best score\n" + PlayerPrefs.GetInt("HighScore");
         }
-        if (coins != null) {
-            coins.text = PlayerPrefs.GetInt("Coins").ToString();
-        }
+        
     }
 
     public void Play() {

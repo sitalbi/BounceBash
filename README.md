@@ -4,7 +4,8 @@
 - Sons: defaite, pas possible d'acheter, musique
 - limite pièces
 - sprite spikes
-- background animé
+- background animé (?)
 - menu paramètre
 - skins
 - pubs
+- Particules !!

@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private bool coolDownChanged, isDead, canContinue;
     private bool buttonClicked;
-    private CoinsManager coinsManager;
+    [SerializeField] private CoinsManager coinsManager;
 
     private int screenPressed, coinsNumber;
 
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", score);
         }
         
-        if (PlayerPrefs.HasKey("Coins")) {
+        /*if (PlayerPrefs.HasKey("Coins")) {
             int oldAmount = PlayerPrefs.GetInt("Coins");
             if (oldAmount < 999) {
                 PlayerPrefs.SetInt("Coins", oldAmount+coinsNumber);
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
         }
         else {
             PlayerPrefs.SetInt("Coins", coinsNumber);
-        }
+        }*/
 
         SceneManager.LoadScene("Scenes/MainMenu");
     }
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
     
     
 
-    public void AddCoins (int amount)
+    private void AddCoins (int amount)
     {
         coinsManager.Animate(coinText.transform.position, amount);
     }

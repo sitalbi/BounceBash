@@ -32,7 +32,7 @@ public class UIMenuTween : MonoBehaviour
     public void GoBackToMenu() {
         LeanTween.moveLocal(logo, logoOriginalPosition, transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         LeanTween.scale(playButton, playButtonOriginalScale, transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
-        LeanTween.move(coins, coinsOriginalPosition, transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
+        //LeanTween.move(coins, coinsOriginalPosition, transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         LeanTween.moveLocal(bottomButtons, bottomOriginalPosition, transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         menuManager.DeactivateMenus();
     }
