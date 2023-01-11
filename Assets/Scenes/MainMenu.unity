@@ -1092,7 +1092,7 @@ ParticleSystemRenderer:
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
-  m_MinParticleSize: 0
+  m_MinParticleSize: 0.1
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
@@ -6311,6 +6311,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2015623642582200916, guid: 6bc1f686ac48878429fbdd9e0d7f1c25,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2015623642582200919, guid: 6bc1f686ac48878429fbdd9e0d7f1c25,
         type: 3}
       propertyPath: m_Name
@@ -7331,6 +7336,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1152211567}
     m_Modifications:
+    - target: {fileID: 243610205192559716, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 243610205192559716, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1941014799386448130, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
