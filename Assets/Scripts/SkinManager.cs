@@ -52,7 +52,7 @@ public class SkinManager : MonoBehaviour
         if (PlayerPrefsExtra.GetBool(skinBool) == false) {
             selectButtonText.text = "Buy " + displayedSkin.price;
             selectButtonText.alignment = TextAlignmentOptions.Left;
-            selectButtonText.margin = new Vector4(20,0,0,0);
+            selectButtonText.margin = new Vector4(115,0,0,0);
             coinImage.SetActive(true);
             lockedIcon.SetActive(true);
         }

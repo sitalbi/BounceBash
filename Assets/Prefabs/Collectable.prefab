@@ -378,6 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 2689015295806312828}
+  text: {fileID: 2735941487747991520}
   coinSound: {fileID: 4960671332965296381}
 --- !u!82 &4960671332965296381
 AudioSource:
