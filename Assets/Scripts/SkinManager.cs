@@ -13,6 +13,7 @@ public class SkinManager : MonoBehaviour
     [SerializeField] private GameObject selectedIcon, lockedIcon, coinImage;
     [SerializeField] private TMP_Text selectButtonText;
     [SerializeField] private AudioSource coin, select;
+    [SerializeField] private ParticleSystem particles;
 
     private int skinIndex;
     private SkinObject displayedSkin;
@@ -91,7 +92,8 @@ public class SkinManager : MonoBehaviour
                 int coinsAmount = PlayerPrefs.GetInt("Coins");
                 PlayerPrefs.SetInt("Coins", coinsAmount-displayedSkin.price);
                 coin.Play();
-                
+                //Particles
+                particles.Play();
             }
             else {
                 return;
