@@ -39,6 +39,6 @@ public class UILeanTween : MonoBehaviour
         LeanTween.move(score, new Vector3(0, 150), 0f);
         LeanTween.move(wallL, new Vector3(-11, wallL.transform.position.y), 0.5f).setEase(LeanTweenType.easeInOutQuint);
         LeanTween.move(wallR, new Vector3(11, wallR.transform.position.y), 0.5f).setEase(LeanTweenType.easeInOutQuint).setOnComplete(playerController.CanMove);
-        LeanTween.moveLocal(inGameScore, new Vector3(inGameScore.transform.localPosition.x, 1050), 0.5f).setEase(LeanTweenType.easeInOutQuint).setOnComplete(playerController.CanMove);
+        LeanTween.moveLocal(inGameScore, new Vector3(inGameScore.transform.localPosition.x, 900), 0.5f).setEase(LeanTweenType.easeInOutQuint).setOnComplete(playerController.CanMove);
     }
 }
