@@ -472,10 +472,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f8c48611e1bec4db9ea4e525cd4ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logo: {fileID: 915481214}
+  logo: {fileID: 2004746343}
+  score: {fileID: 880471848}
   playButton: {fileID: 353388818}
   coins: {fileID: 462069117}
-  bottomButtons: {fileID: 1277936744}
+  skin: {fileID: 1529298053}
+  settings: {fileID: 966755623}
   menuManager: {fileID: 466264023}
   transitionTime: 0.3
 --- !u!4 &388883812
@@ -5938,7 +5940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -41.2}
+  m_AnchoredPosition: {x: 0, y: -41.199997}
   m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &915481214
