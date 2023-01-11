@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
     public void Continue() {
         buttonClicked = true;
         canContinue = false;
+        coinsNumber = 0;
         player.GetComponent<PlayerController>().Respawn();
         gameOverUI.SetActive(false);
         inGameUI.SetActive(true);

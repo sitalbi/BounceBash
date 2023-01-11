@@ -10,12 +10,13 @@ public class MenuManager : MonoBehaviour
     
     void Start() {
         Time.timeScale = 1f;
-    }
-    
-    void Update() {
         if (highscore != null) {
             highscore.text = "Best score\n" + PlayerPrefs.GetInt("HighScore");
         }
+    }
+    
+    void Update() {
+        
         
     }
 
