@@ -757,7 +757,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &260080810
 RectTransform:
@@ -3813,7 +3813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 364}
+  m_AnchoredPosition: {x: 0, y: 52}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1992812916
@@ -4441,6 +4441,16 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 260080806}
+    - target: {fileID: 8409596416147771572, guid: 8b8eb4102dd604f4b9b4076a627f9f1b,
+        type: 3}
+      propertyPath: easeType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409596416147771572, guid: 8b8eb4102dd604f4b9b4076a627f9f1b,
+        type: 3}
+      propertyPath: maxAnimDuration
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8409596416147771594, guid: 8b8eb4102dd604f4b9b4076a627f9f1b,
         type: 3}
       propertyPath: m_Name
