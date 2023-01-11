@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UILeanTween tween;
     [SerializeField] public ObjectSpawner spawner;
     [SerializeField] private float minCoolDown, coolDownStep;
-    [SerializeField] public int collectablePoints;
+    [SerializeField] private TimerManager timerManager;
 
     [NonSerialized] public int score;
 
@@ -55,6 +55,11 @@ public class GameManager : MonoBehaviour
         }
         else {
             coolDownChanged = false;
+        }
+
+        if (isDead && !timerManager.timerIsRunning)
+        {
+            continueButton.SetActive(false);
         }
     }
 
