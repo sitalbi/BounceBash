@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using RDG;
 
 public class PlayerController : MonoBehaviour
 {
@@ -52,6 +53,10 @@ public class PlayerController : MonoBehaviour
 
             jumpPressed = false;
             jumpAudio.Play(0);
+            if (PlayerPrefs.GetInt("vibration") == 1)
+            {
+                Vibration.Vibrate(100, 50);
+            }
         }
 
         if (isOnWall && !jumpPressed) {

@@ -26,6 +26,7 @@ public class MenuManager : MonoBehaviour
 
     public void Settings() {
         settingsMenu.SetActive(true);
+        coinsObject.SetActive(false);
         tween.ChangeMenuTransition(settingsMenu);
     }
 
