@@ -16,3 +16,5 @@ MonoBehaviour:
   price: 0
   name: Skin1
   acquired: 1
+  canChangeColor: 1
+  color: {r: 0, g: 0, b: 0, a: 0}

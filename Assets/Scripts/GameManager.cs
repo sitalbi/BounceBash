@@ -91,9 +91,9 @@ public class GameManager : MonoBehaviour
         canContinue = false;
         coinsNumber = 0;
         player.GetComponent<PlayerController>().Respawn();
+        tween.Initialize();
         gameOverUI.SetActive(false);
         inGameUI.SetActive(true);
-        tween.Initialize();
         Time.timeScale = 1;
         isDead = false;
     }

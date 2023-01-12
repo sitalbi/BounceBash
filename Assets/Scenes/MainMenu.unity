@@ -6798,6 +6798,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7a8f19ce836e1741a05d63f4bcc884c, type: 3}
+--- !u!114 &1644118467 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1909527522292419455, guid: 405fe0f47f781284bb61c5314ab45202,
+    type: 3}
+  m_PrefabInstance: {fileID: 7955702160739583147}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1764104157
 GameObject:
   m_ObjectHideFlags: 0
@@ -7568,6 +7580,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 1909527522292419455, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1941014799386448130, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7581,7 +7598,7 @@ PrefabInstance:
     - target: {fileID: 4819239741314622837, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
       propertyPath: skinList.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4819239741314622837, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
@@ -7604,6 +7621,22 @@ PrefabInstance:
       propertyPath: particles
       value: 
       objectReference: {fileID: 793075985}
+    - target: {fileID: 4819239741314622837, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819239741314622837, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: skinList.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: a4b00aad683232a4387ece481abecd6e,
+        type: 2}
+    - target: {fileID: 4819239741314622837, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: displayedImage
+      value: 
+      objectReference: {fileID: 1644118467}
     - target: {fileID: 5407356696534766717, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
       propertyPath: m_fontAsset

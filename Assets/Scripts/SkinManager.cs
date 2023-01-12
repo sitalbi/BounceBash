@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.UI;
 
 public class SkinManager : MonoBehaviour
@@ -18,6 +19,7 @@ public class SkinManager : MonoBehaviour
     private int skinIndex;
     private SkinObject displayedSkin;
     private string skinBool;
+    
 
     void Start()
     {
@@ -41,7 +43,7 @@ public class SkinManager : MonoBehaviour
     
     void Update() {
         skinBool = "skin" + skinIndex;
-        displayedImage.sprite = displayedSkin.sprite;
+        displayedImage.GetComponent<Image>().sprite = displayedSkin.sprite;
         if (skinIndex == PlayerPrefs.GetInt("skinId")) {
             selectedIcon.SetActive(true);
         }
@@ -63,6 +65,7 @@ public class SkinManager : MonoBehaviour
             lockedIcon.SetActive(false);
             coinImage.SetActive(false);
         }
+        
     }
 
     public void RightButton() {
@@ -73,6 +76,7 @@ public class SkinManager : MonoBehaviour
             skinIndex = 0;
         }
         displayedSkin = PlayerPrefsExtra.GetList<SkinObject>("skinList")[skinIndex];
+        displayedSkin = skinList[skinIndex];
     }
     
     public void LeftButton() {
@@ -83,6 +87,7 @@ public class SkinManager : MonoBehaviour
             skinIndex = skinList.Count-1;
         }
         displayedSkin = PlayerPrefsExtra.GetList<SkinObject>("skinList")[skinIndex];
+        displayedSkin = skinList[skinIndex];
     }
 
     public void SelectSkin() {

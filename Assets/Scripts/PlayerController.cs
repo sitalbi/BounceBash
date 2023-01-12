@@ -27,7 +27,18 @@ public class PlayerController : MonoBehaviour
         yDirection = 1;
         originalGravityScale = rb2D.gravityScale;
         rb2D.gravityScale = 0;
-        GetComponent<SpriteRenderer>().sprite = PlayerPrefsExtra.GetList<SkinObject>("skinList")[PlayerPrefs.GetInt("skinId")].sprite;
+        SkinObject skin = PlayerPrefsExtra.GetList<SkinObject>("skinList")[PlayerPrefs.GetInt("skinId")];
+        GetComponent<SpriteRenderer>().sprite = skin.sprite;
+        Animator animator = GetComponent<Animator>();
+        if (skin.isAnimated)
+        {
+            animator.enabled = true;
+            animator.runtimeAnimatorController = skin.controller;
+        }
+        else
+        {
+            animator.enabled = false;
+        }
     }
 
 
