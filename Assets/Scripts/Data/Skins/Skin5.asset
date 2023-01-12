@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e85fde9b2c220499eadc355b2e7912, type: 3}
   m_Name: Skin5
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 2b433d9992d4185448780ec7454dc223, type: 3}
+  sprite: {fileID: 21300000, guid: e8548b9c29d439845a00651c791e8b58, type: 3}
   price: 100
-  name: Skin5
-  acquired: 0
-  canChangeColor: 1
-  color: {r: 0, g: 0, b: 0, a: 0}
+  name: Sun
+  isAquired: 0
+  isAnimated: 0
+  controller: {fileID: 0}

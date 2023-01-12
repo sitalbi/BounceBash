@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4e85fde9b2c220499eadc355b2e7912, type: 3}
-  m_Name: Skin3
+  m_Name: Skin9
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 094d2aff67f04e14aa03454023f00d78, type: 3}
-  price: 25
-  name: Football
+  sprite: {fileID: 21300000, guid: 5469425fdf5d7c94f943fc9fca275d9f, type: 3}
+  price: 700
+  name: Art
   isAquired: 0
   isAnimated: 0
   controller: {fileID: 0}

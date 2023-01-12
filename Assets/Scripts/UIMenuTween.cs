@@ -6,11 +6,11 @@ using UnityEngine;
 public class UIMenuTween : MonoBehaviour
 {
 
-    [SerializeField] private GameObject logo, score, playButton, coins, skin, settings;
+    [SerializeField] private GameObject logo, score, playButton, coins, skin, settings, ad;
     [SerializeField] private MenuManager menuManager;
     [SerializeField] private float transitionTime;
     private GameObject secondaryMenu;
-    private Vector3 logoOriginalPosition, scoreOriginalPosition, playButtonOriginalScale, coinsOriginalPosition, skinOriginalPosition, settingsOriginalPosition;
+    private Vector3 logoOriginalPosition, scoreOriginalPosition, playButtonOriginalScale, coinsOriginalPosition, skinOriginalPosition, settingsOriginalPosition, adOriginalPosition;
 
     void Awake() {
         logoOriginalPosition = logo.transform.localPosition;
@@ -19,6 +19,7 @@ public class UIMenuTween : MonoBehaviour
         coinsOriginalPosition = coins.transform.position;
         skinOriginalPosition = skin.transform.localPosition;
         settingsOriginalPosition = settings.transform.localPosition;
+        adOriginalPosition = ad.transform.localPosition;
     }
 
     public void ChangeMenuTransition(GameObject menuToChange) {
@@ -30,6 +31,7 @@ public class UIMenuTween : MonoBehaviour
         //LeanTween.move(coins, new Vector3(coinsOriginalPosition.x,-700), transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         LeanTween.moveLocal(skin, new Vector3(skinOriginalPosition.x,-1500), transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         LeanTween.moveLocal(settings, new Vector3(settingsOriginalPosition.x,-1500), transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
+        LeanTween.moveLocal(ad, new Vector3(adOriginalPosition.x,-1500), transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         LeanTween.scale(secondaryMenu, Vector3.one, 0).setDelay(transitionTime);
     }
 
@@ -40,6 +42,7 @@ public class UIMenuTween : MonoBehaviour
         //LeanTween.move(coins, coinsOriginalPosition, transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         LeanTween.moveLocal(skin, skinOriginalPosition, transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         LeanTween.moveLocal(settings, settingsOriginalPosition, transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
+        LeanTween.moveLocal(ad, adOriginalPosition, transitionTime).setEase(LeanTweenType.easeInOutQuint).setIgnoreTimeScale(true);
         menuManager.DeactivateMenus();
     }
 }

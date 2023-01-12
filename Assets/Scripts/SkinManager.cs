@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using RDG;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class SkinManager : MonoBehaviour
     [SerializeField] public List<SkinObject> skinList;
     [SerializeField] private Image displayedImage;
     [SerializeField] private GameObject selectedIcon, lockedIcon, coinImage;
-    [SerializeField] private TMP_Text selectButtonText;
+    [SerializeField] private TMP_Text selectButtonText, nameText;
     [SerializeField] private AudioSource coin, select;
     [SerializeField] private ParticleSystem particles;
 
@@ -63,12 +64,18 @@ public class SkinManager : MonoBehaviour
             selectButtonText.alignment = TextAlignmentOptions.Center;
             selectButtonText.margin = Vector4.zero;
             lockedIcon.SetActive(false);
+            displayedSkin.isAquired = true;
             coinImage.SetActive(false);
         }
-        
+
+        nameText.text = displayedSkin.name;
     }
 
     public void RightButton() {
+        if (PlayerPrefs.GetInt("vibration") == 1)
+        {
+            Vibration.Vibrate(100, 50);
+        }
         if (skinIndex + 1 < skinList.Count) {
             skinIndex++;
         }
@@ -80,6 +87,10 @@ public class SkinManager : MonoBehaviour
     }
     
     public void LeftButton() {
+        if (PlayerPrefs.GetInt("vibration") == 1)
+        {
+            Vibration.Vibrate(100, 50);
+        }
         if (skinIndex - 1 >= 0) {
             skinIndex--;
         }

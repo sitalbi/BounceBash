@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e85fde9b2c220499eadc355b2e7912, type: 3}
   m_Name: Skin6
   m_EditorClassIdentifier: 
-  sprite: {fileID: 8493970967572102424, guid: 0a734b7f795b3a548971760422d6ba78, type: 3}
-  price: 1
-  name: Fire Ball
+  sprite: {fileID: 21300000, guid: 3322648dfc741f540a72388e10111979, type: 3}
+  price: 500
+  name: Jolly Roger
   isAquired: 0
-  isAnimated: 1
-  controller: {fileID: 9100000, guid: 08a0976f8162acd49b3dcd59b17a14ef, type: 2}
+  isAnimated: 0
+  controller: {fileID: 0}
