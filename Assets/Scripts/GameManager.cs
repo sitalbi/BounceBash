@@ -96,7 +96,6 @@ public class GameManager : MonoBehaviour
     }
 
     public void Continue() {
-        
         buttonClicked = true;
         canContinue = false;
         coinsNumber = 0;

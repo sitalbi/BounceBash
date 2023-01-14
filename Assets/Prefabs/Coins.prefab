@@ -288,6 +288,6 @@ MonoBehaviour:
   canvas: {fileID: 0}
   maxCoins: 20
   minAnimDuration: 0.9
-  maxAnimDuration: 3
+  maxAnimDuration: 2
   easeType: 13
   spread: 1

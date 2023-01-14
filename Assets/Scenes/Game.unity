@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &38586885 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1023766558680543850, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1023766558651922543}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d0590936ef3cc428820442bf9f00a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &190070368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,15 +3206,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2046310191}
-        m_MethodName: Continue
-        m_Mode: 1
+      - m_Target: {fileID: 38586885}
+        m_MethodName: LoadRewardedAd
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Rewarded_Android
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1806034999
@@ -4293,6 +4305,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1023766558651922543
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -43.014793
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.02325
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 302.70346
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543849, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023766558680543850, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 2046310191}
+    - target: {fileID: 1023766558680543850, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2046310191}
+    - target: {fileID: 1023766558680543851, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: m_Name
+      value: AdsManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e163cd4751e6e24e9a2d72ab176d5a1, type: 3}
 --- !u!1001 &1029420957567907932
 PrefabInstance:
   m_ObjectHideFlags: 0

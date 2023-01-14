@@ -84,8 +84,11 @@ public class CoinsManager : MonoBehaviour
 					coin.SetActive(false);
 					coinsQueue.Enqueue (coin);
 					coinUIText.text = (Int32.Parse(coinUIText.text) + 1).ToString();
-					
-					earnedCoinUIText.text = "+ " + (amount-i);
+
+					if (earnedCoinUIText != null)
+					{
+						earnedCoinUIText.text = "+ " + (amount-i);
+					}
 
 					if (i == amount - 1)
 					{

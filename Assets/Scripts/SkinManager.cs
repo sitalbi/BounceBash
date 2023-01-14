@@ -10,12 +10,13 @@ using UnityEngine.UI;
 
 public class SkinManager : MonoBehaviour
 {
-    [SerializeField] public List<SkinObject> skinList;
+    [SerializeField] public List<SkinObject> skinList, acquiredSkins;
     [SerializeField] private Image displayedImage;
     [SerializeField] private GameObject selectedIcon, lockedIcon, coinImage, coinAmountObject;
     [SerializeField] private TMP_Text selectButtonText, nameText;
     [SerializeField] private AudioSource coin, select;
     [SerializeField] private ParticleSystem particles;
+    [SerializeField] public NotificationManager notificationManager;
 
     private int skinIndex;
     private SkinObject displayedSkin;
@@ -108,6 +109,13 @@ public class SkinManager : MonoBehaviour
                 int coinsAmount = PlayerPrefs.GetInt("Coins");
                 PlayerPrefs.SetInt("Coins", coinsAmount-displayedSkin.price);
                 coinAmountObject.GetComponent<CoinsManager>().UpdateCoinAmount();
+                if (PlayerPrefsExtra.GetList<SkinObject>("acquiredSkin") != null)
+                {
+                    acquiredSkins = PlayerPrefsExtra.GetList<SkinObject>("acquiredSkin");
+                    acquiredSkins.Add(displayedSkin);
+                    PlayerPrefsExtra.SetList("acquiredSkin", acquiredSkins);
+                }
+                notificationManager.CheckNotifications();
                 coin.Play();
                 //Particles
                 particles.Play();
