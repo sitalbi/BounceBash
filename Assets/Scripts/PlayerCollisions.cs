@@ -38,7 +38,7 @@ public class PlayerCollisions : MonoBehaviour
         if (col.gameObject.layer == collectableLayer) {
             gameManager.EarnCoin();
             col.gameObject.GetComponent<CollectableController>().Touched();
-            Invoke(nameof(SetCollectablePosition),1f);
+            Invoke(nameof(SetCollectablePosition),3f);
         }
 
         if (col.gameObject.layer == offScreenLayer) {

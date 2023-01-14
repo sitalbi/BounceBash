@@ -1,133 +1,52 @@
 fileFormatVersion: 2
-guid: 0a734b7f795b3a548971760422d6ba78
+guid: 908501ca0ccef6f4e8bcd17fcf862807
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6343521284193564003
-    second: shutterstock_591566354-ai_0
+      213: -4290234614513727508
+    second: water_orb_0
   - first:
-      213: 2157960248186156708
-    second: shutterstock_591566354-ai_1
+      213: -4090861043317572795
+    second: water_orb_1
   - first:
-      213: 130688321956433907
-    second: shutterstock_591566354-ai_2
+      213: 9166951772699670106
+    second: water_orb_2
   - first:
-      213: 7905652965322424945
-    second: shutterstock_591566354-ai_3
+      213: 3016436862863967621
+    second: water_orb_3
   - first:
-      213: -8502815349979192068
-    second: shutterstock_591566354-ai_4
+      213: 8298325333418105544
+    second: water_orb_4
   - first:
-      213: 8493970967572102424
-    second: shutterstock_591566354-ai_5
+      213: -2866598695022136678
+    second: water_orb_5
   - first:
-      213: 8507378296527448040
-    second: shutterstock_591566354-ai_6
+      213: 5955964734834652558
+    second: water_orb_6
   - first:
-      213: 4429095695948991690
-    second: shutterstock_591566354-ai_7
+      213: 6477910664006191466
+    second: water_orb_7
   - first:
-      213: -804562333060567906
-    second: shutterstock_591566354-ai_8
+      213: -431406110642459959
+    second: water_orb_8
   - first:
-      213: 9154810368276636108
-    second: shutterstock_591566354-ai_9
+      213: -1829160610943418754
+    second: water_orb_9
   - first:
-      213: -7293980033991868608
-    second: shutterstock_591566354-ai_10
+      213: 3882456924938669112
+    second: water_orb_10
   - first:
-      213: 4248902516291541053
-    second: shutterstock_591566354-ai_11
+      213: 6306133041733391430
+    second: water_orb_11
   - first:
-      213: 4383578074869434641
-    second: shutterstock_591566354-ai_12
+      213: 1588382197684812340
+    second: water_orb_12
   - first:
-      213: -330916552230721496
-    second: shutterstock_591566354-ai_13
+      213: -8506002900891751829
+    second: water_orb_13
   - first:
-      213: -7479697738166620451
-    second: shutterstock_591566354-ai_14
-  - first:
-      213: 958220784469063382
-    second: shutterstock_591566354-ai_15
-  - first:
-      213: 6324322918696044744
-    second: shutterstock_591566354-ai_16
-  - first:
-      213: -7745130106207293017
-    second: shutterstock_591566354-ai_17
-  - first:
-      213: -4950108549519822478
-    second: shutterstock_591566354-ai_18
-  - first:
-      213: 4684854898222997623
-    second: shutterstock_591566354-ai_19
-  - first:
-      213: 3189530544004336052
-    second: shutterstock_591566354-ai_20
-  - first:
-      213: -6219860226447623970
-    second: shutterstock_591566354-ai_21
-  - first:
-      213: 2086812691927820384
-    second: shutterstock_591566354-ai_0
-  - first:
-      213: 500891363578547395
-    second: shutterstock_591566354-ai_1
-  - first:
-      213: 144474287388008299
-    second: shutterstock_591566354-ai_2
-  - first:
-      213: -5162845297693269478
-    second: shutterstock_591566354-ai_3
-  - first:
-      213: 9210259958405694521
-    second: shutterstock_591566354-ai_4
-  - first:
-      213: 8407003954201594902
-    second: shutterstock_591566354-ai_5
-  - first:
-      213: 6858762226671574002
-    second: shutterstock_591566354-ai_6
-  - first:
-      213: 3637354969161789929
-    second: shutterstock_591566354-ai_7
-  - first:
-      213: -4994578548975264603
-    second: shutterstock_591566354-ai_8
-  - first:
-      213: -5074235493632162511
-    second: shutterstock_591566354-ai_9
-  - first:
-      213: 5319242249642862040
-    second: shutterstock_591566354-ai_10
-  - first:
-      213: -3799636471780309163
-    second: shutterstock_591566354-ai_11
-  - first:
-      213: -4279676802983664827
-    second: shutterstock_591566354-ai_12
-  - first:
-      213: 5565025518313384148
-    second: shutterstock_591566354-ai_13
-  - first:
-      213: 2706533860538404305
-    second: shutterstock_591566354-ai_14
-  - first:
-      213: 5828350879336324072
-    second: shutterstock_591566354-ai_15
-  - first:
-      213: 1167282049109544609
-    second: shutterstock_591566354-ai_16
-  - first:
-      213: 7675571914285919163
-    second: shutterstock_591566354-ai_17
-  - first:
-      213: -68736056496556064
-    second: shutterstock_591566354-ai_18
-  - first:
-      213: 5884153154301878917
-    second: shutterstock_591566354-ai_19
+      213: -513571556556615180
+    second: water_orb_14
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -224,7 +143,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shutterstock_591566354-ai_5
+      name: water_orb_5
       rect:
         serializedVersion: 2
         x: 79
@@ -238,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61c8d7bdd8daba470800000000000000
-      internalID: 8407003954201594902
+      spriteID: a927b9dbcabc738d0800000000000000
+      internalID: -2866598695022136678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shutterstock_591566354-ai_6
+      name: water_orb_6
       rect:
         serializedVersion: 2
         x: 282
@@ -259,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fb50a7e7e73f2f50800000000000000
-      internalID: 6858762226671574002
+      spriteID: e85b29ace56d7a250800000000000000
+      internalID: 5955964734834652558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shutterstock_591566354-ai_7
+      name: water_orb_7
       rect:
         serializedVersion: 2
         x: 485
@@ -280,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e1f3eaa21b7a7230800000000000000
-      internalID: 3637354969161789929
+      spriteID: a69cdce6d6926e950800000000000000
+      internalID: 6477910664006191466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shutterstock_591566354-ai_8
+      name: water_orb_8
       rect:
         serializedVersion: 2
         x: 692
@@ -301,14 +220,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ac1b89a541bfaab0800000000000000
-      internalID: -4994578548975264603
+      spriteID: 9ca29359d66530af0800000000000000
+      internalID: -431406110642459959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shutterstock_591566354-ai_10
+      name: water_orb_9
       rect:
         serializedVersion: 2
         x: 79
@@ -322,14 +241,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d5663cb4aeb1d940800000000000000
-      internalID: 5319242249642862040
+      spriteID: e7eb49b9d148d96e0800000000000000
+      internalID: -1829160610943418754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shutterstock_591566354-ai_11
+      name: water_orb_11
       rect:
         serializedVersion: 2
         x: 282
@@ -343,14 +262,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5578aef92caf44bc0800000000000000
-      internalID: -3799636471780309163
+      spriteID: 6445fd21792e38750800000000000000
+      internalID: 6306133041733391430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shutterstock_591566354-ai_12
+      name: water_orb_12
       rect:
         serializedVersion: 2
         x: 485
@@ -364,14 +283,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 543eda45f988b94c0800000000000000
-      internalID: -4279676802983664827
+      spriteID: 43abe8471311b0610800000000000000
+      internalID: 1588382197684812340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shutterstock_591566354-ai_13
+      name: water_orb_14
       rect:
         serializedVersion: 2
         x: 692
@@ -385,8 +304,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d8ad016931fa3d40800000000000000
-      internalID: 5565025518313384148
+      spriteID: 4f1d2bce36d6fd8f0800000000000000
+      internalID: -513571556556615180
       vertices: []
       indices: 
       edges: []

@@ -31,6 +31,7 @@ public class MenuManager : MonoBehaviour
     }
 
     public void Menu() {
+        coinsObject.GetComponent<CoinsManager>().UpdateCoinAmount();
         mainMenu.SetActive(true);
         tween.GoBackToMenu();
         coinsObject.SetActive(true);

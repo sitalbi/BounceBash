@@ -40,6 +40,9 @@ public class CoinsManager : MonoBehaviour
 
 		//prepare pool
 		PrepareCoins ();
+		if (coinUIText != null) {
+			coinUIText.text = PlayerPrefs.GetInt("Coins").ToString();
+		}
 	}
 
 	private void PrepareCoins ()
@@ -53,9 +56,9 @@ public class CoinsManager : MonoBehaviour
 		}
 	}
 
-	void Update()
+	public void UpdateCoinAmount()
 	{
-		if (coinUIText != null) {
+		if (PlayerPrefs.HasKey("Coins")) {
 			coinUIText.text = PlayerPrefs.GetInt("Coins").ToString();
 		}
 	}
@@ -80,14 +83,7 @@ public class CoinsManager : MonoBehaviour
 				{
 					coin.SetActive(false);
 					coinsQueue.Enqueue (coin);
-					if (PlayerPrefs.HasKey("Coins")) {
-						int oldAmount = PlayerPrefs.GetInt("Coins");
-						if (oldAmount < 999) {
-							PlayerPrefs.SetInt("Coins", oldAmount+1);
-						}
-					} else {
-						PlayerPrefs.SetInt("Coins", 1);
-					}
+					coinUIText.text = (Int32.Parse(coinUIText.text) + 1).ToString();
 					
 					earnedCoinUIText.text = "+ " + (amount-i);
 

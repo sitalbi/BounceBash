@@ -41,7 +41,6 @@ public class ObjectSpawner : MonoBehaviour
                 Instantiate(spike, new Vector3(transform.position.x, transform.position.y + (obstacleCoolDown * obstacle.transform.localScale.y), 0), Quaternion.identity);
             }
         }
-       
         
         if(canSpawnCollectable) {
             canSpawnCollectable = false;
@@ -50,8 +49,8 @@ public class ObjectSpawner : MonoBehaviour
     }
 
 
-    private void Spawn(GameObject gameObject) {
-        Instantiate(gameObject, transform);
+    private void Spawn(GameObject gmObj) {
+        Instantiate(gmObj, transform);
     }
 
     public void SetCollectablePosition() {

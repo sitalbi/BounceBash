@@ -75,6 +75,15 @@ public class GameManager : MonoBehaviour
             continueButton.SetActive(true);
         }
         coinText.text = "+" + coinsNumber;
+        if (PlayerPrefs.HasKey("Coins")) {
+            int oldAmount = PlayerPrefs.GetInt("Coins");
+            if (oldAmount < 999) {
+                PlayerPrefs.SetInt("Coins", oldAmount+coinsNumber);
+            }
+        }
+        else {
+            PlayerPrefs.SetInt("Coins", coinsNumber);
+        }
         AddCoins(coinsNumber);
         yourScoreText.text = score.ToString();
         bestScoretext.text = PlayerPrefs.GetInt("HighScore") >= score ? "Best score: " + PlayerPrefs.GetInt("HighScore") : "New Best";
@@ -87,6 +96,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Continue() {
+        
         buttonClicked = true;
         canContinue = false;
         coinsNumber = 0;
@@ -108,15 +118,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", score);
         }
         
-        /*if (PlayerPrefs.HasKey("Coins")) {
-            int oldAmount = PlayerPrefs.GetInt("Coins");
-            if (oldAmount < 999) {
-                PlayerPrefs.SetInt("Coins", oldAmount+coinsNumber);
-            }
-        }
-        else {
-            PlayerPrefs.SetInt("Coins", coinsNumber);
-        }*/
+        
 
         SceneManager.LoadScene("Scenes/MainMenu");
     }
