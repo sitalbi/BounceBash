@@ -3,14 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using RDG;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.UI;
 
 public class SkinManager : MonoBehaviour
 {
-    [SerializeField] public List<SkinObject> skinList, acquiredSkins;
+    [SerializeField] public List<SkinObject> skinList, acquiredSkins, unlockedSkins;
     [SerializeField] private Image displayedImage;
     [SerializeField] private GameObject selectedIcon, lockedIcon, coinImage, coinAmountObject;
     [SerializeField] private TMP_Text selectButtonText, nameText;
@@ -69,7 +67,34 @@ public class SkinManager : MonoBehaviour
             coinImage.SetActive(false);
         }
 
-        nameText.text = displayedSkin.name;
+        if (!acquiredSkins.Contains(displayedSkin))
+        {
+            unlockedSkins = PlayerPrefsExtra.GetList<SkinObject>("unlockedSkin");
+            if (unlockedSkins == null)
+            {
+                unlockedSkins = new List<SkinObject>();
+                PlayerPrefsExtra.SetList("unlockedSkin", unlockedSkins);
+            }
+            if (displayedSkin.price > PlayerPrefs.GetInt("Coins") && !unlockedSkins.Contains(displayedSkin))
+            {
+                displayedImage.color = Color.black;
+                nameText.text = "???";
+                selectButtonText.text = "Locked";
+                selectButtonText.alignment = TextAlignmentOptions.Center;
+                coinImage.SetActive(false);
+                lockedIcon.SetActive(true);
+            }
+            else
+            {
+                nameText.text = displayedSkin.name;
+                displayedImage.color = Color.white;
+                if (!unlockedSkins.Contains(displayedSkin))
+                {
+                    unlockedSkins.Add(displayedSkin);
+                    PlayerPrefsExtra.SetList("unlockedSkin", unlockedSkins);
+                }
+            }
+        }
     }
 
     public void RightButton() {

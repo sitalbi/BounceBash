@@ -14,7 +14,7 @@ public class NotificationManager : MonoBehaviour
 
     public void CheckNotifications()
     {
-        if (PlayerPrefsExtra.GetList<SkinObject>("acquiredSkin").Count == 0)
+        if (PlayerPrefsExtra.GetList<SkinObject>("acquiredSkin").Count == 0 || PlayerPrefsExtra.GetList<SkinObject>("acquiredSkin")==null)
         {
             PlayerPrefsExtra.SetList("acquiredSkin",
                 new List<SkinObject>() { PlayerPrefsExtra.GetList<SkinObject>("skinList")[0] });
