@@ -267,9 +267,9 @@ GameObject:
   - component: {fileID: 2011549137636478385}
   - component: {fileID: 8636914249145747296}
   - component: {fileID: 4960671332965296381}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Collectable
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

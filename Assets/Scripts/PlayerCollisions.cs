@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerCollisions : MonoBehaviour
 {
-    [SerializeField] private int wallLayer, obstacleLayer, collectableLayer, offScreenLayer;
+    [SerializeField] private int offScreenLayer;
+    [SerializeField] private string obstacleTag, collectableTag, wallTag;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private AudioSource scoreSound;
 
@@ -20,7 +21,7 @@ public class PlayerCollisions : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
-        if (col.gameObject.layer == wallLayer) {
+        if (col.gameObject.CompareTag(wallTag)) {
             gameManager.score++;
             playerController.isOnWall = true;
             playerController.xDirection *= -1;
@@ -28,14 +29,14 @@ public class PlayerCollisions : MonoBehaviour
             scoreSound.Play(0);
         }
 
-        if (col.gameObject.layer == obstacleLayer) {
+        if (col.gameObject.CompareTag(obstacleTag)) {
             //Death
             gameManager.Death();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.layer == collectableLayer) {
+        if (col.gameObject.CompareTag(collectableTag)) {
             gameManager.EarnCoin();
             col.gameObject.GetComponent<CollectableController>().Touched();
             Invoke(nameof(SetCollectablePosition),3f);
@@ -47,7 +48,7 @@ public class PlayerCollisions : MonoBehaviour
     }
 
     private void OnCollisionExit2D(Collision2D col) {
-        if (col.gameObject.layer == wallLayer) {
+        if (col.gameObject.CompareTag(wallTag)) {
             playerController.isOnWall = false;
             playerController.yDirection *= -1;
             playerController.SetGravityScale(playerController.originalGravityScale);

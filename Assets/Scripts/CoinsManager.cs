@@ -76,7 +76,6 @@ public class CoinsManager : MonoBehaviour
 				coin.transform.position = collectedCoinPosition + new Vector3 (Random.Range (-spread, spread), 0f, 0f);
 
 				
-				
 				//animate coin to target position
 				float duration = Random.Range (minAnimDuration, maxAnimDuration);
 				coin.transform.LeanMove(targetPosition,duration).setEase(easeType).setIgnoreTimeScale(true).setOnComplete(() =>
