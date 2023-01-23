@@ -1,11 +1,8 @@
 # MobileProject
 
 ## To do list 
-- Sons: defaite, pas possible d'acheter, musique
-- limite pièces
-- sprite spikes
-- background animé (?)
-- menu paramètre
-- skins
-- pubs
-- Particules !!
+
+- Code couleur pour les murs (rouge = descendre/ bleu = monter par exemple)
+  Cela est expliqué avant le début de la partie lorsque le joueur est immobile (canva text "blue up and red down")
+  Implementer un bonus qui change le sens des murs (rouge devient bleu et inversement)
+
