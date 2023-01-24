@@ -14,7 +14,6 @@ public class SkinManager : MonoBehaviour
     [SerializeField] private TMP_Text selectButtonText, nameText;
     [SerializeField] private AudioSource coin, select;
     [SerializeField] private ParticleSystem particles;
-    [SerializeField] public NotificationManager notificationManager;
 
     private int skinIndex;
     private SkinObject displayedSkin;
@@ -140,7 +139,6 @@ public class SkinManager : MonoBehaviour
                     acquiredSkins.Add(displayedSkin);
                     PlayerPrefsExtra.SetList("acquiredSkin", acquiredSkins);
                 }
-                notificationManager.CheckNotifications();
                 coin.Play();
                 //Particles
                 particles.Play();

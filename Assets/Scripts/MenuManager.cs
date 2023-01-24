@@ -55,7 +55,6 @@ public class MenuManager : MonoBehaviour
         tween.GoBackToMenu();
         coinsObject.SetActive(true);
         skinMenu.GetComponent<SkinManager>().InitializeDisplayedSkin();
-        skinMenu.GetComponent<SkinManager>().notificationManager.CheckNotifications();
     }
     
     public void Skins() {
@@ -71,21 +70,5 @@ public class MenuManager : MonoBehaviour
 
     public void ClearPlayerPrefs() {
         PlayerPrefs.DeleteAll();
-    }
-    
-    public void AddCoins ()
-    {
-        coinsManager.Animate(coinsButton.transform.position, 50);
-        coinsButton.SetActive(false);
-        PlayerPrefs.SetString("AdTime",DateTime.Today.Date.ToString());
-        if (PlayerPrefs.HasKey("Coins")) {
-            int oldAmount = PlayerPrefs.GetInt("Coins");
-            if (oldAmount < 999) {
-                PlayerPrefs.SetInt("Coins", oldAmount+50);
-            }
-        }
-        else {
-            PlayerPrefs.SetInt("Coins", 50);
-        }
     }
 }

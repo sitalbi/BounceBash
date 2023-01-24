@@ -8,14 +8,13 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
     string _gameId;
     [SerializeField] bool _testMode = true;
     [SerializeField] GameManager gameManager;
-    [SerializeField] MenuManager menuManager;
 
     private void Awake()
     {
         if (Advertisement.isInitialized)
         {
             Debug.Log("Advertisement is Initialized");
-            //LoadRewardedAd();
+            LoadBannerAd();
         }
         else
         {
@@ -31,6 +30,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
     public void OnInitializationComplete()
     {
         Debug.Log("Unity Ads initialization complete.");
+        LoadBannerAd();
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
@@ -83,13 +83,6 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
             Debug.Log("rewarded Player");
             gameManager.Continue();
         }
-        
-        if (placementId.Equals("Rewarded_Coin_Android_Placement") && UnityAdsShowCompletionState.COMPLETED.Equals(showCompletionState))
-        {
-            Debug.Log("rewarded Player");
-            menuManager.AddCoins();
-        }
-        //Advertisement.Banner.Show("Banner_Android");
     }
 
 
@@ -109,11 +102,12 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
     void OnBannerLoaded()
     {
         Advertisement.Banner.Show("Banner_Android");
+        Debug.Log("Banner ad loaded");
     }
 
     void OnBannerError(string message)
     {
-
+        Debug.Log("Could not show banner");
     }
 
 }
