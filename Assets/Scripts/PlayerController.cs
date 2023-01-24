@@ -28,16 +28,6 @@ public class PlayerController : MonoBehaviour
         rb2D.gravityScale = 0;
         SkinObject skin = PlayerPrefsExtra.GetList<SkinObject>("skinList")[PlayerPrefs.GetInt("skinId")];
         GetComponent<SpriteRenderer>().sprite = skin.sprite;
-        Animator animator = GetComponent<Animator>();
-        if (skin.isAnimated)
-        {
-            animator.enabled = true;
-            animator.runtimeAnimatorController = skin.controller;
-        }
-        else
-        {
-            animator.enabled = false;
-        }
     }
 
 
@@ -47,7 +37,6 @@ public class PlayerController : MonoBehaviour
                 if(canMove) jumpPressed = true;
             }
         }
-
         /*if (Input.GetButtonDown("Jump")) {
             jumpPressed = true;
         }*/
@@ -57,6 +46,7 @@ public class PlayerController : MonoBehaviour
         if (jumpPressed) {
             if (!isOnWall && rb2D.gravityScale == 0) {
                 rb2D.gravityScale = originalGravityScale;
+                gameObject.GetComponent<TrailRenderer>().enabled = true;
             }
             rb2D.velocity = new Vector2(xDirection * movementSpeed * 50 * Time.deltaTime,
                     50 * jumpForce * Time.deltaTime);
@@ -84,12 +74,15 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Death() {
-        gameObject.SetActive(false);
+        gameObject.GetComponent<ParticleSystem>().Play();
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<TrailRenderer>().enabled = false;
         rb2D.velocity = Vector2.zero;
     }
     
     public void Respawn() {
-        gameObject.SetActive(true);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        //gameObject.SetActive(true);
         transform.position = startPos;
         xDirection = 1;
         yDirection = 1;
