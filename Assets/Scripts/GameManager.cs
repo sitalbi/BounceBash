@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText, yourScoreText, bestScoretext, coinText;
-    [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, inGameUI, gameOverUI, continueButton;
+    [SerializeField] private GameObject player, spikeSpawner1, spikeSpawner2, inGameUI, gameOverUI, continueButton,blueText, redText;
     [SerializeField] private UILeanTween tween;
     [SerializeField] public ObjectSpawner spawner;
     [SerializeField] private float minCoolDown, coolDownStep;
@@ -60,6 +60,17 @@ public class GameManager : MonoBehaviour
         if (isDead && !timerManager.timerIsRunning)
         {
             continueButton.SetActive(false);
+        }
+
+        if (player.GetComponent<PlayerController>().isOnWall || player.GetComponent<Rigidbody2D>().gravityScale != 0)
+        {
+            blueText.SetActive(false);
+            redText.SetActive(false);
+        }
+        else
+        {
+            blueText.SetActive(true);
+            redText.SetActive(true);
         }
     }
 
