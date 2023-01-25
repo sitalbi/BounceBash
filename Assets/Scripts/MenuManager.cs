@@ -40,7 +40,6 @@ public class MenuManager : MonoBehaviour
         mainMenu.SetActive(true);
         tween.GoBackToMenu();
         coinsObject.SetActive(true);
-        skinMenu.GetComponent<SkinManager>().InitializeDisplayedSkin();
         AudioListener.volume = PlayerPrefs.GetInt("sound");
     }
     

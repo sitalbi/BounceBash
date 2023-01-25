@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Skin1
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: d9acac4795a825941a35d3e28a230752, type: 3}
-  price: 1
+  price: 0
   name: Default
-  isAquired: 1
+  isAcquired: 1
   isAnimated: 0
   controller: {fileID: 0}

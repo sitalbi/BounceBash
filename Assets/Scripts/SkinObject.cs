@@ -7,7 +7,7 @@ public class SkinObject : ScriptableObject
     public Sprite sprite;
     public int price;
     public string name;
-    public bool isAquired;
+    public bool isAcquired;
     public bool isAnimated;
     public RuntimeAnimatorController controller;
 }

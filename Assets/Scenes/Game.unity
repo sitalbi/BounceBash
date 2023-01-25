@@ -262,7 +262,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d9acac4795a825941a35d3e28a230752, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5709,9 +5709,9 @@ MonoBehaviour:
   bonus: {fileID: 7919428091877343039, guid: 87d988104436d9e4dae243a637924303, type: 3}
   obstacleCoolDown: 2
   horizontalInterval_Collectable: {x: -7.5, y: 7.5}
-  verticalInterval_Collectable: {x: -16, y: 16}
+  verticalInterval_Collectable: {x: -15, y: 15}
   horizontalInterval_Bonus: {x: -5, y: 5}
-  verticalInterval_Bonus: {x: -15, y: 15}
+  verticalInterval_Bonus: {x: -14, y: 14}
   maxSpawnRate: 5
 --- !u!4 &374580181
 Transform:
@@ -5932,7 +5932,7 @@ GameObject:
   - component: {fileID: 619232467}
   - component: {fileID: 619232466}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5976,7 +5976,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 85efd8358b9d2f14991069bb0f6e9718, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -5996,7 +5996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619232465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -17.57, z: 1}
+  m_LocalPosition: {x: 0, y: -19.5, z: 1}
   m_LocalScale: {x: 50, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6386,7 +6386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884776344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -16.5, z: -13.051563}
+  m_LocalPosition: {x: 0, y: -18.5, z: -13.051563}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7006,7 +7006,7 @@ MonoBehaviour:
   collectable: {fileID: 0}
   spike: {fileID: 0}
   bonus: {fileID: 0}
-  obstacleCoolDown: 5.23
+  obstacleCoolDown: 5.89
   horizontalInterval_Collectable: {x: 0, y: 0}
   verticalInterval_Collectable: {x: 0, y: 0}
   horizontalInterval_Bonus: {x: 0, y: 0}
@@ -7404,7 +7404,7 @@ MonoBehaviour:
   collectable: {fileID: 0}
   spike: {fileID: 0}
   bonus: {fileID: 0}
-  obstacleCoolDown: 6.39
+  obstacleCoolDown: 7.54
   horizontalInterval_Collectable: {x: 0, y: 0}
   verticalInterval_Collectable: {x: 0, y: 0}
   horizontalInterval_Bonus: {x: 0, y: 0}
@@ -8454,7 +8454,7 @@ PrefabInstance:
     - target: {fileID: 2320143691592721856, guid: fa63a08f02fe2124ba3097727b83fc2b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2320143691592721856, guid: fa63a08f02fe2124ba3097727b83fc2b,
         type: 3}
@@ -8504,7 +8504,7 @@ PrefabInstance:
     - target: {fileID: 2320143691592721856, guid: fa63a08f02fe2124ba3097727b83fc2b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2320143691592721858, guid: fa63a08f02fe2124ba3097727b83fc2b,
         type: 3}
@@ -8599,7 +8599,7 @@ PrefabInstance:
     - target: {fileID: 5498325612239461487, guid: 2b9740206ec7ad347815daf307e760f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5498325612239461487, guid: 2b9740206ec7ad347815daf307e760f9,
         type: 3}
@@ -8649,7 +8649,7 @@ PrefabInstance:
     - target: {fileID: 5498325612239461487, guid: 2b9740206ec7ad347815daf307e760f9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b9740206ec7ad347815daf307e760f9, type: 3}
