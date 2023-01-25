@@ -14,7 +14,7 @@ public class SettingsManager : MonoBehaviour
     private int newValue;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (!PlayerPrefs.HasKey("sound"))
         {
@@ -43,7 +43,6 @@ public class SettingsManager : MonoBehaviour
         value = PlayerPrefs.GetInt("sound");
         newValue = value == 1 ? 0 : 1;
         PlayerPrefs.SetInt("sound", newValue);
-        AudioListener.volume = newValue;
         sound.GetComponent<Image>().sprite = newValue == 1 ? soundOn : soundOff;
     }
     

@@ -16,21 +16,8 @@ public class MenuManager : MonoBehaviour
         if (highscore != null) {
             highscore.text = "Best score\n" + PlayerPrefs.GetInt("HighScore");
         }
-
-        if (PlayerPrefs.GetString("AdTime") != null)
-        {
-            if (DateTime.Today.Date.Subtract(DateTime.Parse(PlayerPrefs.GetString("AdTime")).Date) >=
-                TimeSpan.FromDays(1) && PlayerPrefs.GetInt("HighScore") != 0)
-            {
-                coinsButton.SetActive(true);
-            }
-        }
-        else
-        {
-            if(PlayerPrefs.GetInt("HighScore") != 0)
-                PlayerPrefs.SetString("AdTime",DateTime.Today.Date.ToString());
-        }
-
+        
+        AudioListener.volume = PlayerPrefs.GetInt("sound");
         
     }
     
@@ -55,6 +42,7 @@ public class MenuManager : MonoBehaviour
         tween.GoBackToMenu();
         coinsObject.SetActive(true);
         skinMenu.GetComponent<SkinManager>().InitializeDisplayedSkin();
+        AudioListener.volume = PlayerPrefs.GetInt("sound");
     }
     
     public void Skins() {

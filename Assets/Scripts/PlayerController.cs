@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
         startPos = transform.position;
         rb2D = GetComponent<Rigidbody2D>();
         xDirection = 1;
-        yDirection = 1;
         originalGravityScale = rb2D.gravityScale;
         rb2D.gravityScale = 0;
         SkinObject skin = PlayerPrefsExtra.GetList<SkinObject>("skinList")[PlayerPrefs.GetInt("skinId")];
@@ -85,7 +84,6 @@ public class PlayerController : MonoBehaviour
         //gameObject.SetActive(true);
         transform.position = startPos;
         xDirection = 1;
-        yDirection = 1;
         rb2D.gravityScale = 0;
         isOnWall = false;
         jumpPressed = false;
