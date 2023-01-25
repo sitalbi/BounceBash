@@ -8,7 +8,8 @@ public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject obstacle, collectable, spike, bonus;
     [SerializeField] public float obstacleCoolDown;
-    [SerializeField] private Vector2 horizontalInterval, verticalInterval;
+    [SerializeField] private Vector2 horizontalInterval_Collectable, verticalInterval_Collectable;
+    [SerializeField] private Vector2 horizontalInterval_Bonus, verticalInterval_Bonus;
     [SerializeField] private int maxSpawnRate;
 
     [NonSerialized] public int spawnRate;
@@ -23,7 +24,7 @@ public class ObjectSpawner : MonoBehaviour
         rn = new Random();
         spawnRate = maxSpawnRate;
         Invoke(nameof(SetCollectablePosition), 5f);
-        Invoke(nameof(SetBonusPosition), 1f);
+        Invoke(nameof(SetBonusPosition), rn.Next(25,100));
     }
 
 
@@ -60,15 +61,15 @@ public class ObjectSpawner : MonoBehaviour
     }
 
     public void SetCollectablePosition() {
-        int x = rn.Next((int)horizontalInterval.x, (int)horizontalInterval.y);
-        int y = rn.Next((int)verticalInterval.x, (int)verticalInterval.y);
+        int x = rn.Next((int)horizontalInterval_Collectable.x, (int)horizontalInterval_Collectable.y);
+        int y = rn.Next((int)verticalInterval_Collectable.x, (int)verticalInterval_Collectable.y);
         collectablePosition = new Vector3(x, y);
         canSpawnCollectable = true;
     }
     
     public void SetBonusPosition() {
-        int x = rn.Next((int)horizontalInterval.x, (int)horizontalInterval.y);
-        int y = rn.Next((int)verticalInterval.x, (int)verticalInterval.y);
+        int x = rn.Next((int)horizontalInterval_Bonus.x, (int)horizontalInterval_Bonus.y);
+        int y = rn.Next((int)verticalInterval_Bonus.x, (int)verticalInterval_Bonus.y);
         bonusPosition = new Vector3(x, y);
         canSpawnBonus = true;
     }

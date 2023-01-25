@@ -5708,8 +5708,10 @@ MonoBehaviour:
   spike: {fileID: 4837817029544065033, guid: f495a5cd02aa2074180cbb4a9276f64e, type: 3}
   bonus: {fileID: 7919428091877343039, guid: 87d988104436d9e4dae243a637924303, type: 3}
   obstacleCoolDown: 2
-  horizontalInterval: {x: -9, y: 9}
-  verticalInterval: {x: -16, y: 16}
+  horizontalInterval_Collectable: {x: -8, y: 8}
+  verticalInterval_Collectable: {x: -17, y: 17}
+  horizontalInterval_Bonus: {x: -6, y: 6}
+  verticalInterval_Bonus: {x: -16, y: 16}
   maxSpawnRate: 5
 --- !u!4 &374580181
 Transform:
@@ -6924,8 +6926,10 @@ MonoBehaviour:
   spike: {fileID: 0}
   bonus: {fileID: 0}
   obstacleCoolDown: 5.23
-  horizontalInterval: {x: 0, y: 0}
-  verticalInterval: {x: 0, y: 0}
+  horizontalInterval_Collectable: {x: 0, y: 0}
+  verticalInterval_Collectable: {x: 0, y: 0}
+  horizontalInterval_Bonus: {x: 0, y: 0}
+  verticalInterval_Bonus: {x: 0, y: 0}
   maxSpawnRate: 0
 --- !u!4 &1284204421
 Transform:
@@ -7320,8 +7324,10 @@ MonoBehaviour:
   spike: {fileID: 0}
   bonus: {fileID: 0}
   obstacleCoolDown: 6.39
-  horizontalInterval: {x: 0, y: 0}
-  verticalInterval: {x: 0, y: 0}
+  horizontalInterval_Collectable: {x: 0, y: 0}
+  verticalInterval_Collectable: {x: 0, y: 0}
+  horizontalInterval_Bonus: {x: 0, y: 0}
+  verticalInterval_Bonus: {x: 0, y: 0}
   maxSpawnRate: 0
 --- !u!4 &1647153291
 Transform:
@@ -8736,6 +8742,21 @@ PrefabInstance:
         type: 3}
       propertyPath: stopNaNPropagation
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3995585586836541529, guid: 6bc1f686ac48878429fbdd9e0d7f1c25,
+        type: 3}
+      propertyPath: matteColor.r
+      value: 0.03773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 3995585586836541529, guid: 6bc1f686ac48878429fbdd9e0d7f1c25,
+        type: 3}
+      propertyPath: matteColor.g
+      value: 0.03773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 3995585586836541529, guid: 6bc1f686ac48878429fbdd9e0d7f1c25,
+        type: 3}
+      propertyPath: matteColor.b
+      value: 0.03773582
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1f686ac48878429fbdd9e0d7f1c25, type: 3}

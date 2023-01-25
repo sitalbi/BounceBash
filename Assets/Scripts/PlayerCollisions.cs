@@ -52,7 +52,7 @@ public class PlayerCollisions : MonoBehaviour
             {
                 wallL.GetComponent<WallData>().ChangeColor();
                 wallR.GetComponent<WallData>().ChangeColor();
-                time = rn.Next(10, 50);
+                time = rn.Next(25, 100);
                 Invoke(nameof(SetBonusPosition), time);
             }
             col.gameObject.GetComponent<CollectableController>().Touched();
