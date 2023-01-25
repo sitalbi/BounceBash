@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class UILeanTween : MonoBehaviour
@@ -36,9 +34,9 @@ public class UILeanTween : MonoBehaviour
         LeanTween.scale(button1, Vector3.zero, 0f);
         LeanTween.scale(button2, Vector3.zero, 0f);
         LeanTween.scale(best, Vector3.zero, 0f);
-        LeanTween.move(score, new Vector3(0, 150), 0f);
-        LeanTween.move(wallL, new Vector3(-11, wallL.transform.position.y), 0.5f).setEase(LeanTweenType.easeInOutQuint);
-        LeanTween.move(wallR, new Vector3(11, wallR.transform.position.y), 0.5f).setEase(LeanTweenType.easeInOutQuint).setOnComplete(playerController.CanMove);
-        LeanTween.moveLocal(inGameScore, new Vector3(inGameScore.transform.localPosition.x, 900), 0.5f).setEase(LeanTweenType.easeInOutQuint).setOnComplete(playerController.CanMove);
+        LeanTween.move(score, new Vector3(0, 105), 0f);
+        LeanTween.move(wallL, new Vector3(-9.5f, wallL.transform.position.y), 0.5f).setEase(LeanTweenType.easeInOutQuint);
+        LeanTween.move(wallR, new Vector3(9.5f, wallR.transform.position.y), 0.5f).setEase(LeanTweenType.easeInOutQuint).setOnComplete(playerController.CanMove);
+        LeanTween.moveLocal(inGameScore, new Vector3(inGameScore.transform.localPosition.x, 1100), 0.5f).setEase(LeanTweenType.easeInOutQuint).setOnComplete(playerController.CanMove);
     }
 }
