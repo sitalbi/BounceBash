@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int jumpForce, movementSpeed, wallSpeed;
     [SerializeField] private AudioSource jumpAudio;
+    [SerializeField] private GameManager gameManager;
 
     private Rigidbody2D rb2D;
 
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
         xDirection = 1;
         originalGravityScale = rb2D.gravityScale;
         rb2D.gravityScale = 0;
-        SkinObject skin = PlayerPrefsExtra.GetList<SkinObject>("skinList")[PlayerPrefs.GetInt("skinId")];
+        SkinObject skin = PlayerPrefsExtra.GetList<SkinObject>("AcquiredSkins")[PlayerPrefs.GetInt("SelectedSkinId")];
         GetComponent<SpriteRenderer>().sprite = skin.sprite;
     }
 
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
             if (!isOnWall && rb2D.gravityScale == 0) {
                 rb2D.gravityScale = originalGravityScale;
                 gameObject.GetComponent<TrailRenderer>().enabled = true;
+                gameManager.inGame = true;
             }
             rb2D.velocity = new Vector2(xDirection * movementSpeed * 50 * Time.deltaTime,
                     50 * jumpForce * Time.deltaTime);

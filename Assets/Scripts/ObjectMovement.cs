@@ -4,13 +4,18 @@ using UnityEngine;
 public class ObjectMovement : MonoBehaviour
 {
     public int movementSpeed;
+    private GameManager gameManager;
 
     void Start() {
         movementSpeed = 10;
-        Destroy(gameObject, 7f);
+        Destroy(gameObject, 50f);
+        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
     }
 
     void Update() {
-        transform.position += Vector3.down * (movementSpeed * Time.deltaTime);
+        if (gameManager.inGame)
+        {
+            transform.position += Vector3.down * (movementSpeed * Time.deltaTime);
+        }
     }
 }

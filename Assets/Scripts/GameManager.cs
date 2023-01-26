@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TimerManager timerManager;
 
     [NonSerialized] public int score;
+    [NonSerialized] public bool inGame;
 
-    private bool coolDownChanged, isDead, canContinue;
-    private bool buttonClicked;
+    private bool coolDownChanged, isDead, canContinue, buttonClicked;
     [SerializeField] private CoinsManager coinsManager;
 
     private int screenPressed, coinsNumber;
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         inGameUI.SetActive(true);
         canContinue = true;
         screenPressed = 0;
+        inGame = false;
     }
 
 
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void Death() {
         player.GetComponent<PlayerController>().Death();
+        inGame = false;
         gameOverUI.SetActive(true);
         inGameUI.SetActive(false);
         tween.LevelComplete();

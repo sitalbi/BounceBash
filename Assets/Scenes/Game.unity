@@ -177,6 +177,7 @@ MonoBehaviour:
   movementSpeed: 8
   wallSpeed: 6
   jumpAudio: {fileID: 225899498}
+  gameManager: {fileID: 2046310191}
 --- !u!61 &225899493
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -282,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225899491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 2.75, y: 1.87, z: 0}
   m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5708,11 +5709,12 @@ MonoBehaviour:
   spike: {fileID: 4837817029544065033, guid: f495a5cd02aa2074180cbb4a9276f64e, type: 3}
   bonus: {fileID: 7919428091877343039, guid: 87d988104436d9e4dae243a637924303, type: 3}
   obstacleCoolDown: 2
-  horizontalInterval_Collectable: {x: -7.5, y: 7.5}
-  verticalInterval_Collectable: {x: -15, y: 15}
-  horizontalInterval_Bonus: {x: -5, y: 5}
-  verticalInterval_Bonus: {x: -14, y: 14}
+  horizontalIntervalCollectable: {x: -7.5, y: 7.5}
+  verticalIntervalCollectable: {x: -15, y: 15}
+  horizontalIntervalBonus: {x: -5, y: 5}
+  verticalIntervalBonus: {x: -14, y: 14}
   maxSpawnRate: 5
+  gameManager: {fileID: 2046310191}
 --- !u!4 &374580181
 Transform:
   m_ObjectHideFlags: 0
@@ -7007,11 +7009,12 @@ MonoBehaviour:
   spike: {fileID: 0}
   bonus: {fileID: 0}
   obstacleCoolDown: 5.89
-  horizontalInterval_Collectable: {x: 0, y: 0}
-  verticalInterval_Collectable: {x: 0, y: 0}
-  horizontalInterval_Bonus: {x: 0, y: 0}
-  verticalInterval_Bonus: {x: 0, y: 0}
+  horizontalIntervalCollectable: {x: 0, y: 0}
+  verticalIntervalCollectable: {x: 0, y: 0}
+  horizontalIntervalBonus: {x: 0, y: 0}
+  verticalIntervalBonus: {x: 0, y: 0}
   maxSpawnRate: 0
+  gameManager: {fileID: 0}
 --- !u!4 &1284204421
 Transform:
   m_ObjectHideFlags: 0
@@ -7405,11 +7408,12 @@ MonoBehaviour:
   spike: {fileID: 0}
   bonus: {fileID: 0}
   obstacleCoolDown: 7.54
-  horizontalInterval_Collectable: {x: 0, y: 0}
-  verticalInterval_Collectable: {x: 0, y: 0}
-  horizontalInterval_Bonus: {x: 0, y: 0}
-  verticalInterval_Bonus: {x: 0, y: 0}
+  horizontalIntervalCollectable: {x: 0, y: 0}
+  verticalIntervalCollectable: {x: 0, y: 0}
+  horizontalIntervalBonus: {x: 0, y: 0}
+  verticalIntervalBonus: {x: 0, y: 0}
   maxSpawnRate: 0
+  gameManager: {fileID: 0}
 --- !u!4 &1647153291
 Transform:
   m_ObjectHideFlags: 0
@@ -8071,7 +8075,7 @@ GameObject:
   - component: {fileID: 2046310191}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

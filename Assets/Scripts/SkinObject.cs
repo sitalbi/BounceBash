@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Skin")]
 public class SkinObject : ScriptableObject
 {
+    public int id;
     public Sprite sprite;
     public int price;
     public string name;

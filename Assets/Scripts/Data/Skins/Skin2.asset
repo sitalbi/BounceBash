@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e85fde9b2c220499eadc355b2e7912, type: 3}
   m_Name: Skin2
   m_EditorClassIdentifier: 
+  id: 1
   sprite: {fileID: 21300000, guid: a0ed27cc10303e3479bf19e65b8cf738, type: 3}
   price: 10
   name: Target
-  isAquired: 0
+  isAcquired: 0
   isAnimated: 0
   controller: {fileID: 0}

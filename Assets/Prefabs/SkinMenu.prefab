@@ -275,7 +275,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4819239741314622837}
+      - m_Target: {fileID: 0}
         m_MethodName: SelectSkin
         m_Mode: 1
         m_Arguments:
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4819239741314622837}
+      - m_Target: {fileID: 0}
         m_MethodName: LeftButton
         m_Mode: 1
         m_Arguments:
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4819239741314622837}
+      - m_Target: {fileID: 0}
         m_MethodName: RightButton
         m_Mode: 1
         m_Arguments:
@@ -855,7 +855,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7955702160324967580}
-  - component: {fileID: 4819239741314622837}
   m_Layer: 5
   m_Name: SkinMenu
   m_TagString: Untagged
@@ -888,32 +887,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4819239741314622837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7955702160324967581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aca68c80aabd754da6b31bf1ff5f290, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skinList:
-  - {fileID: 11400000, guid: a85dc8be79adeda42a9c5ecf5238afba, type: 2}
-  - {fileID: 11400000, guid: 76ea41521f3c14f45b7236f3dad4de75, type: 2}
-  - {fileID: 11400000, guid: 9d8a5b9d383deb04d83e6002dd20b608, type: 2}
-  - {fileID: 11400000, guid: 601d554361ade604190681cce966fafb, type: 2}
-  - {fileID: 11400000, guid: 7fe8cdd7fe916a04eb2d0876b0655932, type: 2}
-  displayedImage: {fileID: 1909527522292419455}
-  selectedIcon: {fileID: 2807486368093858798}
-  lockedIcon: {fileID: 5677811054112894699}
-  coinImage: {fileID: 7955702160387747795}
-  selectButtonText: {fileID: 7126763274927839968}
-  coin: {fileID: 0}
-  select: {fileID: 0}
-  particles: {fileID: 0}
 --- !u!1 &7955702160387747795
 GameObject:
   m_ObjectHideFlags: 0
