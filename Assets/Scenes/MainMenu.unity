@@ -127,6 +127,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7955702160739583147}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &215100494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7126763274927839968, guid: 405fe0f47f781284bb61c5314ab45202,
+    type: 3}
+  m_PrefabInstance: {fileID: 7955702160739583147}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &218743933
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +258,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 353388821}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 466264023}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &353388821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -318,7 +341,7 @@ MonoBehaviour:
   coins: {fileID: 462069117}
   skin: {fileID: 1442244427}
   settings: {fileID: 608744047}
-  menuManager: {fileID: 0}
+  menuManager: {fileID: 466264023}
   transitionTime: 0.3
 --- !u!4 &388883812
 Transform:
@@ -406,6 +429,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1479759392914236643}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &462069118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8409596416147771572, guid: 8b8eb4102dd604f4b9b4076a627f9f1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1479759392914236643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462069117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009af464be7a5ff4fa265628c92e1a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &466264022
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,14 +470,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b70ef4a58f05fd4ca8b431788f6f2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highscore: {fileID: 0}
-  mainMenu: {fileID: 0}
-  settingsMenu: {fileID: 0}
-  skinMenu: {fileID: 0}
-  coinsObject: {fileID: 0}
+  highscore: {fileID: 880471849}
+  mainMenu: {fileID: 218743933}
+  settingsMenu: {fileID: 2131472350}
+  skinMenu: {fileID: 2034956342}
+  coinsObject: {fileID: 462069117}
   coinsButton: {fileID: 0}
-  tween: {fileID: 0}
-  coinsManager: {fileID: 0}
+  tween: {fileID: 388883811}
+  coinsManager: {fileID: 462069118}
 --- !u!4 &466264024
 Transform:
   m_ObjectHideFlags: 0
@@ -508,13 +543,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0ae0bb1ad12544a802825dcdb69bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skinList: []
-  skinUIElement: {fileID: 0}
-  selectButton: {fileID: 0}
-  nameText: {fileID: 0}
-  buttonText: {fileID: 0}
-  unacquiredSprite: {fileID: 0}
-  coinsManager: {fileID: 0}
+  skinList:
+  - {fileID: 11400000, guid: a85dc8be79adeda42a9c5ecf5238afba, type: 2}
+  - {fileID: 11400000, guid: 76ea41521f3c14f45b7236f3dad4de75, type: 2}
+  - {fileID: 11400000, guid: 9d8a5b9d383deb04d83e6002dd20b608, type: 2}
+  skinUIElement: {fileID: 993933387358520959, guid: 2e8c40d7f2c13aa4cb2d378a986a2fe0,
+    type: 3}
+  selectButton: {fileID: 140296776}
+  nameText: {fileID: 910179290}
+  buttonText: {fileID: 215100494}
+  unacquiredSprite: {fileID: 21300000, guid: 85efd8358b9d2f14991069bb0f6e9718, type: 3}
+  coinsManager: {fileID: 462069118}
 --- !u!114 &493255932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,8 +575,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 0}
+  m_CellSize: {x: 200, y: 200}
+  m_Spacing: {x: 100, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &608744047
@@ -596,7 +635,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3dd6eb2544527434e90ba8ff64fdac1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -656,7 +695,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 608744049}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 466264023}
+        m_MethodName: Settings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &690694904 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6686179662717657945, guid: d7a8f19ce836e1741a05d63f4bcc884c,
@@ -5767,10 +5817,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Best score
+
+    50'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: df6cb406535bd6c46a32676d8787a294, type: 2}
+  m_sharedMaterial: {fileID: -8982445824396340282, guid: df6cb406535bd6c46a32676d8787a294,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5795,14 +5848,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_textAlignment: 257
+  m_fontStyle: 1
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5812,7 +5865,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 11
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -5836,13 +5889,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 880471849}
-    characterCount: 0
+    characterCount: 13
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 2
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -5883,8 +5936,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -41.199997}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -75.7}
+  m_SizeDelta: {x: 700, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910179290 stripped
 MonoBehaviour:
@@ -6051,8 +6104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 0}
-  isGlobal: 0
+  sharedProfile: {fileID: 11400000, guid: 77631fdb6820bdf408a6d43dc90ca0d6, type: 2}
+  isGlobal: 1
   blendDistance: 0
   weight: 1
   priority: 0
@@ -6398,7 +6451,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f9e03b973fdb98f4691ae7ba00c6396e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6459,12 +6512,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 466264023}
+        m_MethodName: Skins
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6512,7 +6565,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -258.65015}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532028161
 MonoBehaviour:
@@ -6532,10 +6585,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Touch to Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: df6cb406535bd6c46a32676d8787a294, type: 2}
+  m_sharedMaterial: {fileID: -8982445824396340282, guid: df6cb406535bd6c46a32676d8787a294,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6560,15 +6614,15 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_textAlignment: 257
-  m_characterSpacing: 0
+  m_fontStyle: 1
+  m_textAlignment: 514
+  m_characterSpacing: 15.15
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -6577,7 +6631,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -6601,13 +6655,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1532028161}
-    characterCount: 0
+    characterCount: 13
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -7138,9 +7192,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Settings
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: df6cb406535bd6c46a32676d8787a294, type: 2}
   m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7166,14 +7220,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
   m_fontSizeMax: 0
-  m_fontStyle: 0
-  m_textAlignment: 257
+  m_fontStyle: 1
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -7218,7 +7272,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -7554,7 +7608,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 892f59f00c5b44142b953ad3d0ceeb68, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8153,6 +8207,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2034956343}
     m_Modifications:
+    - target: {fileID: 605449758157442009, guid: fc9b873be25278b418cc6df1df3e2246,
+        type: 3}
+      propertyPath: m_CellSize.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 605449758157442009, guid: fc9b873be25278b418cc6df1df3e2246,
+        type: 3}
+      propertyPath: m_CellSize.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 605449758157442009, guid: fc9b873be25278b418cc6df1df3e2246,
+        type: 3}
+      propertyPath: m_Spacing.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 605449758157442009, guid: fc9b873be25278b418cc6df1df3e2246,
+        type: 3}
+      propertyPath: m_Spacing.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5604627149981302690, guid: fc9b873be25278b418cc6df1df3e2246,
         type: 3}
       propertyPath: m_Name

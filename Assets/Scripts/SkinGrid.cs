@@ -21,12 +21,12 @@ public class SkinGrid : MonoBehaviour
     {
         skinUIElements = new List<GameObject>();
         
-        if (PlayerPrefs.HasKey("SelectedSkinId"))
+        if (!PlayerPrefs.HasKey("SelectedSkinId"))
         {
             PlayerPrefs.SetInt("SelectedSkinId", 0);
         }
         
-        if (PlayerPrefs.HasKey("AcquiredSkins"))
+        if (!PlayerPrefs.HasKey("AcquiredSkins"))
         {
             List<SkinObject> skins = new List<SkinObject> { skinList[0] };
             PlayerPrefsExtra.SetList("AcquiredSkins", skins);
@@ -34,6 +34,8 @@ public class SkinGrid : MonoBehaviour
         
         foreach (SkinObject skin in skinList)
         {
+            // Reference the SkinObject in the UIElement
+            skinUIElement.GetComponent<SkinImage>().skin = skin;
             // UI checks
             if (PlayerPrefsExtra.GetList<SkinObject>("AcquiredSkins").Contains(skin))
             {
@@ -47,10 +49,17 @@ public class SkinGrid : MonoBehaviour
             {
                 skinUIElement.GetComponent<Image>().sprite = unacquiredSprite;
             }
-            // Reference the SkinObject in the UIElement
-            skinUIElement.GetComponent<SkinImage>().skin = skin;
+            
+            // BUG: la list contient que le Skin3 (3 instances)
+            // Solution : Faire un tableau classique au lieu d'une liste?
+            skinUIElements.Add(skinUIElement);
+            
+            foreach (var s in skinUIElements)
+            {
+                Debug.Log(s.GetComponent<SkinImage>().skin);
+            }
+            
             Instantiate(skinUIElement, transform);
-            //skinUIElements.Add(skinUIElement); -> BUG: la list contient que le Skin3 (3 instances)
         }
 
         
