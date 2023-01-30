@@ -39,7 +39,7 @@ public class SkinGrid : MonoBehaviour
             // UI checks
             if (PlayerPrefsExtra.GetList<SkinObject>("AcquiredSkins").Contains(skin))
             {
-                skinUIElement.GetComponent<Image>().sprite = skin.sprite;
+                //skinUIElement.GetComponent<Image>().sprite = skin.sprite;
                 if (skin.id == PlayerPrefs.GetInt("SelectedSkinId"))
                 {
                     displayedSkin = skin;
@@ -47,17 +47,12 @@ public class SkinGrid : MonoBehaviour
             }
             else
             {
-                skinUIElement.GetComponent<Image>().sprite = unacquiredSprite;
+                //skinUIElement.GetComponent<Image>().sprite = unacquiredSprite;
             }
             
             // BUG: la list contient que le Skin3 (3 instances)
             // Solution : Faire un tableau classique au lieu d'une liste?
             skinUIElements.Add(skinUIElement);
-            
-            foreach (var s in skinUIElements)
-            {
-                Debug.Log(s.GetComponent<SkinImage>().skin);
-            }
             
             Instantiate(skinUIElement, transform);
         }
@@ -91,7 +86,7 @@ public class SkinGrid : MonoBehaviour
         }
         
         // Update les skins NOT WORKING
-        /*foreach (Transform skinUI in transform)
+        foreach (Transform skinUI in transform)
         {
             if (PlayerPrefsExtra.GetList<SkinObject>("AcquiredSkins").Contains(skinUI.GetComponent<SkinImage>().skin))
             {
@@ -101,8 +96,8 @@ public class SkinGrid : MonoBehaviour
             {
                 skinUI.GetComponent<Image>().sprite = unacquiredSprite;
             }
-            
-        }*/
+            //skinUI.GetComponent<Image>().sprite = skinUI.GetComponent<SkinImage>().skin.sprite;
+        }
         
     }
 
