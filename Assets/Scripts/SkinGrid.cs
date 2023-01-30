@@ -91,6 +91,23 @@ public class SkinGrid : MonoBehaviour
             if (PlayerPrefsExtra.GetList<SkinObject>("AcquiredSkins").Contains(skinUI.GetComponent<SkinImage>().skin))
             {
                 skinUI.GetComponent<Image>().sprite = skinUI.GetComponent<SkinImage>().skin.sprite;
+                if (skinUI.GetComponent<SkinImage>().skin.id == PlayerPrefs.GetInt("SelectedSkinId"))
+                {
+                    skinUI.GetComponent<SkinImage>().selectedIcon.SetActive(true);
+                }
+                else
+                {
+                    skinUI.GetComponent<SkinImage>().selectedIcon.SetActive(false);
+                }
+
+                if (skinUI.GetComponent<SkinImage>().skin.id == displayedSkin.id)
+                {
+                    skinUI.GetComponent<SkinImage>().cadre.color = Color.yellow;
+                }
+                else
+                {
+                    skinUI.GetComponent<SkinImage>().cadre.color = Color.white;
+                }
             }
             else
             {
@@ -101,6 +118,11 @@ public class SkinGrid : MonoBehaviour
         
     }
 
+    public void InitializeDisplaySkin()
+    {
+        displayedSkin = skinList[PlayerPrefs.GetInt("SelectedSkinId")];
+    }
+    
     public void ChangeDisplaySkin(SkinObject sk)
     {
         displayedSkin = sk;

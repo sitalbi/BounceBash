@@ -45,6 +45,7 @@ public class MenuManager : MonoBehaviour
     
     public void Skins() {
         skinMenu.SetActive(true);
+        skinMenu.GetComponentInChildren<SkinGrid>().InitializeDisplaySkin();
         tween.ChangeMenuTransition(skinMenu);
         coinsObject.GetComponent<CoinsManager>().UpdateCoinAmount();
     }

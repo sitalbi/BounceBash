@@ -154,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &218743934
 RectTransform:
   m_ObjectHideFlags: 0
@@ -552,7 +552,7 @@ MonoBehaviour:
   selectButton: {fileID: 140296776}
   nameText: {fileID: 910179290}
   buttonText: {fileID: 215100494}
-  unacquiredSprite: {fileID: 21300000, guid: 85efd8358b9d2f14991069bb0f6e9718, type: 3}
+  unacquiredSprite: {fileID: 21300000, guid: 5ca6236745e4d304a9b4149e98794b0d, type: 3}
   coinsManager: {fileID: 462069118}
 --- !u!114 &493255932
 MonoBehaviour:
@@ -572,11 +572,11 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 200, y: 200}
-  m_Spacing: {x: 100, y: 50}
+  m_Spacing: {x: 150, y: 100}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &608744047
@@ -8220,12 +8220,17 @@ PrefabInstance:
     - target: {fileID: 605449758157442009, guid: fc9b873be25278b418cc6df1df3e2246,
         type: 3}
       propertyPath: m_Spacing.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 605449758157442009, guid: fc9b873be25278b418cc6df1df3e2246,
         type: 3}
       propertyPath: m_Spacing.y
-      value: 50
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 605449758157442009, guid: fc9b873be25278b418cc6df1df3e2246,
+        type: 3}
+      propertyPath: m_ChildAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5604627149981302690, guid: fc9b873be25278b418cc6df1df3e2246,
         type: 3}
@@ -8405,7 +8410,7 @@ PrefabInstance:
     - target: {fileID: 1324161611711414377, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 703.82
+      value: 841
       objectReference: {fileID: 0}
     - target: {fileID: 1324161611711414377, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
@@ -8652,6 +8657,26 @@ PrefabInstance:
       propertyPath: m_margin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7126763274927839968, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126763274927839968, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126763274927839968, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126763274927839968, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7955702160324967580, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8765,7 +8790,7 @@ PrefabInstance:
     - target: {fileID: 7955702160324967581, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7955702160324967581, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
@@ -8816,7 +8841,7 @@ PrefabInstance:
     - target: {fileID: 8175460147837295806, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 522.22
+      value: 635.6
       objectReference: {fileID: 0}
     - target: {fileID: 8175460147837295806, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
@@ -8863,6 +8888,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SelectOnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943123628991133012, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d04544ec90b890e4c972e2bc23e0edae,
+        type: 3}
+    - target: {fileID: 8943123628991133012, guid: 405fe0f47f781284bb61c5314ab45202,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4819239741314622837, guid: 405fe0f47f781284bb61c5314ab45202, type: 3}
