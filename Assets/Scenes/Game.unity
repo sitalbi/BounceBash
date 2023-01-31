@@ -7012,7 +7012,7 @@ MonoBehaviour:
   verticalIntervalCollectable: {x: 0, y: 0}
   horizontalIntervalBonus: {x: 0, y: 0}
   verticalIntervalBonus: {x: 0, y: 0}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 2046310191}
 --- !u!4 &1284204421
 Transform:
   m_ObjectHideFlags: 0
@@ -7410,7 +7410,7 @@ MonoBehaviour:
   verticalIntervalCollectable: {x: 0, y: 0}
   horizontalIntervalBonus: {x: 0, y: 0}
   verticalIntervalBonus: {x: 0, y: 0}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 2046310191}
 --- !u!4 &1647153291
 Transform:
   m_ObjectHideFlags: 0
