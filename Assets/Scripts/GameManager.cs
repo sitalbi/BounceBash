@@ -37,9 +37,6 @@ public class GameManager : MonoBehaviour
                 if (spawner.obstacleCoolDown > minCoolDown && !coolDownChanged) {
                     spawner.obstacleCoolDown -= coolDownStep;
                     coolDownChanged = true;
-                    if (spawner.spawnRate > 2) {
-                        spawner.spawnRate--;
-                    }
                 }
             }
 

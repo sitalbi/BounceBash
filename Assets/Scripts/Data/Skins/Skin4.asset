@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e85fde9b2c220499eadc355b2e7912, type: 3}
   m_Name: Skin4
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 4b5bd7f031f09bd4684674be03bc2c29, type: 3}
+  id: 3
+  sprite: {fileID: 21300000, guid: a6acc74a7d613ee4e89e8f2186ce55b2, type: 3}
   price: 50
-  name: Lightning
-  isAquired: 0
+  name: Purple
+  isAcquired: 0
   isAnimated: 0
   controller: {fileID: 0}

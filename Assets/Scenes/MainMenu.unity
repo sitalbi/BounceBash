@@ -154,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &218743934
 RectTransform:
   m_ObjectHideFlags: 0
@@ -547,9 +547,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a85dc8be79adeda42a9c5ecf5238afba, type: 2}
   - {fileID: 11400000, guid: 76ea41521f3c14f45b7236f3dad4de75, type: 2}
   - {fileID: 11400000, guid: 9d8a5b9d383deb04d83e6002dd20b608, type: 2}
+  - {fileID: 11400000, guid: 601d554361ade604190681cce966fafb, type: 2}
+  - {fileID: 11400000, guid: 7fe8cdd7fe916a04eb2d0876b0655932, type: 2}
+  - {fileID: 11400000, guid: daa10bde9218edf44be65da04c3fdd37, type: 2}
+  - {fileID: 11400000, guid: ecb8c8f4e62a3ca478c7eeaa90f728d0, type: 2}
   skinUIElement: {fileID: 993933387358520959, guid: 2e8c40d7f2c13aa4cb2d378a986a2fe0,
     type: 3}
   selectButton: {fileID: 140296776}
+  coinImage: {fileID: 1860015342}
   nameText: {fileID: 910179290}
   buttonText: {fileID: 215100494}
   unacquiredSprite: {fileID: 21300000, guid: 5ca6236745e4d304a9b4149e98794b0d, type: 3}
@@ -7137,6 +7142,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1860015342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7955702160387747795, guid: 405fe0f47f781284bb61c5314ab45202,
+    type: 3}
+  m_PrefabInstance: {fileID: 7955702160739583147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1915075635
 GameObject:
   m_ObjectHideFlags: 0
@@ -8790,7 +8801,7 @@ PrefabInstance:
     - target: {fileID: 7955702160324967581, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7955702160324967581, guid: 405fe0f47f781284bb61c5314ab45202,
         type: 3}

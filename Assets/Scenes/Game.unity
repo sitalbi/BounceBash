@@ -5708,12 +5708,11 @@ MonoBehaviour:
     type: 3}
   spike: {fileID: 4837817029544065033, guid: f495a5cd02aa2074180cbb4a9276f64e, type: 3}
   bonus: {fileID: 7919428091877343039, guid: 87d988104436d9e4dae243a637924303, type: 3}
-  obstacleCoolDown: 2
+  obstacleCoolDown: 2.1
   horizontalIntervalCollectable: {x: -7.5, y: 7.5}
   verticalIntervalCollectable: {x: -15, y: 15}
   horizontalIntervalBonus: {x: -5, y: 5}
   verticalIntervalBonus: {x: -14, y: 14}
-  maxSpawnRate: 5
   gameManager: {fileID: 2046310191}
 --- !u!4 &374580181
 Transform:
@@ -7013,7 +7012,6 @@ MonoBehaviour:
   verticalIntervalCollectable: {x: 0, y: 0}
   horizontalIntervalBonus: {x: 0, y: 0}
   verticalIntervalBonus: {x: 0, y: 0}
-  maxSpawnRate: 0
   gameManager: {fileID: 0}
 --- !u!4 &1284204421
 Transform:
@@ -7412,7 +7410,6 @@ MonoBehaviour:
   verticalIntervalCollectable: {x: 0, y: 0}
   horizontalIntervalBonus: {x: 0, y: 0}
   verticalIntervalBonus: {x: 0, y: 0}
-  maxSpawnRate: 0
   gameManager: {fileID: 0}
 --- !u!4 &1647153291
 Transform:

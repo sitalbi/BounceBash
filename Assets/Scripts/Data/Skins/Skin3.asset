@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Skin3
   m_EditorClassIdentifier: 
   id: 2
-  sprite: {fileID: 21300000, guid: 094d2aff67f04e14aa03454023f00d78, type: 3}
+  sprite: {fileID: 21300000, guid: 29e2bfc51e7d67c43972b62995dc4d9c, type: 3}
   price: 1
-  name: Football
+  name: Yellow
   isAcquired: 0
   isAnimated: 0
   controller: {fileID: 0}

@@ -9,10 +9,8 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] public float obstacleCoolDown;
     [SerializeField] private Vector2 horizontalIntervalCollectable, verticalIntervalCollectable;
     [SerializeField] private Vector2 horizontalIntervalBonus, verticalIntervalBonus;
-    [SerializeField] private int maxSpawnRate;
     [SerializeField] private GameManager gameManager;
-
-    [NonSerialized] public int spawnRate;
+    
     [NonSerialized] public bool scoreMoreThan10;
 
     private float spawnTime;
@@ -22,7 +20,6 @@ public class ObjectSpawner : MonoBehaviour
 
     void Start() {
         rn = new Random();
-        spawnRate = maxSpawnRate;
         Invoke(nameof(SetCollectablePosition), 5f);
         Invoke(nameof(SetBonusPosition), rn.Next(25,50));
     }

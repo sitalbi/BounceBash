@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SkinGrid : MonoBehaviour
 {
     [SerializeField] public List<SkinObject> skinList;
-    [SerializeField] private GameObject skinUIElement, selectButton;
+    [SerializeField] private GameObject skinUIElement, selectButton, coinImage;
     [SerializeField] private TMP_Text nameText, buttonText;
     [SerializeField] private Sprite unacquiredSprite;
     [SerializeField] private CoinsManager coinsManager;
@@ -30,6 +30,11 @@ public class SkinGrid : MonoBehaviour
         {
             List<SkinObject> skins = new List<SkinObject> { skinList[0] };
             PlayerPrefsExtra.SetList("AcquiredSkins", skins);
+        }
+        
+        if (!PlayerPrefs.HasKey("SkinsList"))
+        {
+            PlayerPrefsExtra.SetList("SkinsList", skinList);
         }
         
         foreach (SkinObject skin in skinList)
@@ -73,6 +78,7 @@ public class SkinGrid : MonoBehaviour
             {
                 selectButton.SetActive(true);
                 buttonText.text = "Select";
+                coinImage.SetActive(false);
             }
             else
             {
@@ -83,37 +89,38 @@ public class SkinGrid : MonoBehaviour
         {
             selectButton.SetActive(true);
             buttonText.text = displayedSkin.price.ToString();
+            coinImage.SetActive(true);
         }
         
-        // Update les skins NOT WORKING
+        // Update les skins
         foreach (Transform skinUI in transform)
         {
-            if (PlayerPrefsExtra.GetList<SkinObject>("AcquiredSkins").Contains(skinUI.GetComponent<SkinImage>().skin))
+            SkinImage skinImage = skinUI.GetComponent<SkinImage>();
+            if (PlayerPrefsExtra.GetList<SkinObject>("AcquiredSkins").Contains(skinImage.skin))
             {
-                skinUI.GetComponent<Image>().sprite = skinUI.GetComponent<SkinImage>().skin.sprite;
-                if (skinUI.GetComponent<SkinImage>().skin.id == PlayerPrefs.GetInt("SelectedSkinId"))
+                skinUI.GetComponent<Image>().sprite = skinImage.skin.sprite;
+                if (skinImage.skin.id == PlayerPrefs.GetInt("SelectedSkinId"))
                 {
-                    skinUI.GetComponent<SkinImage>().selectedIcon.SetActive(true);
+                    skinImage.selectedIcon.SetActive(true);
                 }
                 else
                 {
-                    skinUI.GetComponent<SkinImage>().selectedIcon.SetActive(false);
+                    skinImage.selectedIcon.SetActive(false);
                 }
 
-                if (skinUI.GetComponent<SkinImage>().skin.id == displayedSkin.id)
+                if (skinImage.skin.id == displayedSkin.id)
                 {
-                    skinUI.GetComponent<SkinImage>().cadre.color = Color.yellow;
+                    skinImage.cadre.color = Color.yellow;
                 }
                 else
                 {
-                    skinUI.GetComponent<SkinImage>().cadre.color = Color.white;
+                    skinImage.cadre.color = Color.white;
                 }
             }
             else
             {
                 skinUI.GetComponent<Image>().sprite = unacquiredSprite;
             }
-            //skinUI.GetComponent<Image>().sprite = skinUI.GetComponent<SkinImage>().skin.sprite;
         }
         
     }

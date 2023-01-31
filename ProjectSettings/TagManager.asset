@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Collectable
   - Bonus
+  - GameManager
   layers:
   - Default
   - TransparentFX

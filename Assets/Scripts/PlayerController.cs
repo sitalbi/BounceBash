@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         xDirection = 1;
         originalGravityScale = rb2D.gravityScale;
         rb2D.gravityScale = 0;
-        SkinObject skin = PlayerPrefsExtra.GetList<SkinObject>("AcquiredSkins")[PlayerPrefs.GetInt("SelectedSkinId")];
+        SkinObject skin = PlayerPrefsExtra.GetList<SkinObject>("SkinsList")[PlayerPrefs.GetInt("SelectedSkinId")];
         GetComponent<SpriteRenderer>().sprite = skin.sprite;
     }
 
