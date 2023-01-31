@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Skin5
   m_EditorClassIdentifier: 
   id: 4
-  sprite: {fileID: 21300000, guid: a0ed27cc10303e3479bf19e65b8cf738, type: 3}
-  price: 100
-  name: Target
+  sprite: {fileID: 21300000, guid: 2d8bdbbf653e75e49be3c1a40e11699b, type: 3}
+  price: 30
+  name: Red
   isAcquired: 0
   isAnimated: 0
   controller: {fileID: 0}

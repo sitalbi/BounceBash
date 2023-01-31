@@ -78,7 +78,8 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
         Debug.Log("OnUnityAdsShowComplete "+showCompletionState);
-        if (placementId.Equals("Rewarded_Android") && UnityAdsShowCompletionState.COMPLETED.Equals(showCompletionState))
+        string placementIdString = (Application.platform == RuntimePlatform.IPhonePlayer) ? "Rewarded_iOS" : "Rewarded_Android";
+        if (placementId.Equals(placementIdString) && UnityAdsShowCompletionState.COMPLETED.Equals(showCompletionState))
         {
             Debug.Log("rewarded Player");
             gameManager.Continue();
@@ -89,8 +90,9 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
 
     public void LoadBannerAd()
     {
+        string placementId = (Application.platform == RuntimePlatform.IPhonePlayer) ? "Banner_iOS" : "Banner_Android";
         Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
-        Advertisement.Banner.Load("Banner_Android",
+        Advertisement.Banner.Load(placementId,
             new BannerLoadOptions
             {
                 loadCallback = OnBannerLoaded,

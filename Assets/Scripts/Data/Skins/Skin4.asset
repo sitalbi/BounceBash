@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Skin4
   m_EditorClassIdentifier: 
   id: 3
-  sprite: {fileID: 21300000, guid: a6acc74a7d613ee4e89e8f2186ce55b2, type: 3}
-  price: 50
-  name: Purple
+  sprite: {fileID: 21300000, guid: 1105594bf46216d49893b2d3e6b2c8c0, type: 3}
+  price: 30
+  name: Blue
   isAcquired: 0
   isAnimated: 0
   controller: {fileID: 0}

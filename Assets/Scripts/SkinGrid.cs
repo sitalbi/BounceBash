@@ -31,8 +31,8 @@ public class SkinGrid : MonoBehaviour
             List<SkinObject> skins = new List<SkinObject> { skinList[0] };
             PlayerPrefsExtra.SetList("AcquiredSkins", skins);
         }
-        
-        if (!PlayerPrefs.HasKey("SkinsList"))
+
+        if (!PlayerPrefs.HasKey("SkinsList") || PlayerPrefsExtra.GetList<SkinObject>("SkinsList").Count != skinList.Count)
         {
             PlayerPrefsExtra.SetList("SkinsList", skinList);
         }
