@@ -17,7 +17,11 @@ public class MenuManager : MonoBehaviour
         }
         
         AudioListener.volume = PlayerPrefs.GetInt("sound");
-        
+
+        if (!PlayerPrefs.HasKey("gamesCpt"))
+        {
+            PlayerPrefs.SetInt("gamesCpt", 0);
+        }
     }
     
     void Update() {

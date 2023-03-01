@@ -7550,13 +7550,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 38586885}
         m_MethodName: LoadRewardedAd
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Rewarded_Android
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1806034999
@@ -8106,6 +8106,7 @@ MonoBehaviour:
   minCoolDown: 0.6
   coolDownStep: 0.25
   timerManager: {fileID: 1893089030}
+  adsManager: {fileID: 38586885}
   coinsManager: {fileID: 1479759391548347072}
 --- !u!4 &2046310192
 Transform:
@@ -8415,6 +8416,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 2046310191}
+    - target: {fileID: 1023766558680543850, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
+        type: 3}
+      propertyPath: homeButton
+      value: 
+      objectReference: {fileID: 274592637}
     - target: {fileID: 1023766558680543851, guid: 8e163cd4751e6e24e9a2d72ab176d5a1,
         type: 3}
       propertyPath: m_Name

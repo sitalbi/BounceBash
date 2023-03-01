@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public ObjectSpawner spawner;
     [SerializeField] private float minCoolDown, coolDownStep;
     [SerializeField] private TimerManager timerManager;
+    [SerializeField] private AdsInitializer adsManager;
 
     [NonSerialized] public int score;
     [NonSerialized] public bool inGame;
@@ -116,6 +117,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Menu() {
+        PlayerPrefs.SetInt("gamesCpt", PlayerPrefs.GetInt("gamesCpt")+1);
         if (PlayerPrefs.HasKey("HighScore")) {
             if (score > PlayerPrefs.GetInt("HighScore")) {
                 PlayerPrefs.SetInt("HighScore", score);
@@ -124,10 +126,17 @@ public class GameManager : MonoBehaviour
         else {
             PlayerPrefs.SetInt("HighScore", score);
         }
-        
-        
 
-        SceneManager.LoadScene("Scenes/MainMenu");
+        if (PlayerPrefs.GetInt("gamesCpt") > 3)
+        {
+            // Interstitate ad
+            adsManager.LoadInterstitialAd();
+            PlayerPrefs.SetInt("gamesCpt", 0);
+        }
+        else
+        {
+            SceneManager.LoadScene("Scenes/MainMenu");
+        }
     }
 
     public void EarnCoin()

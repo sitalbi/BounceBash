@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
 {
@@ -8,6 +10,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
     string _gameId;
     [SerializeField] bool _testMode = true;
     [SerializeField] GameManager gameManager;
+    [SerializeField] GameObject homeButton;
 
     private void Awake()
     {
@@ -38,19 +41,26 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
         Debug.Log($"Unity Ads Initialization Failed: {error.ToString()} - {message}");
     }
 
-    public void LoadInerstitialAd()
+    public void LoadInterstitialAd()
     {
-        Advertisement.Load("Interstitial_Android", this);
+        string placementId = (Application.platform == RuntimePlatform.IPhonePlayer) ? "Interstitial_iOS" : "Interstitial_Android";
+        Advertisement.Load(placementId, this);
     }
 
-    public void LoadRewardedAd(string placementId)
+    public void LoadRewardedAd()
     {
+        string placementId = (Application.platform == RuntimePlatform.IPhonePlayer) ? "Rewarded_iOS" : "Rewarded_Android";
+        //homeButton.GetComponent<Button>().interactable = false;
         Advertisement.Load(placementId, this);
     }
 
     public void OnUnityAdsAdLoaded(string placementId)
     {
         Debug.Log("OnUnityAdsAdLoaded");
+        /*if (placementId == "Rewarded_iOS" || placementId == "Rewarded_Android")
+        {
+            homeButton.GetComponent<Button>().interactable = false;
+        }*/
         Advertisement.Show(placementId,this);
     }
 
@@ -78,11 +88,17 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
         Debug.Log("OnUnityAdsShowComplete "+showCompletionState);
-        string placementIdString = (Application.platform == RuntimePlatform.IPhonePlayer) ? "Rewarded_iOS" : "Rewarded_Android";
-        if (placementId.Equals(placementIdString) && UnityAdsShowCompletionState.COMPLETED.Equals(showCompletionState))
+        string rewarded = (Application.platform == RuntimePlatform.IPhonePlayer) ? "Rewarded_iOS" : "Rewarded_Android";
+        if (placementId.Equals(rewarded) && UnityAdsShowCompletionState.COMPLETED.Equals(showCompletionState))
         {
             Debug.Log("rewarded Player");
             gameManager.Continue();
+        }
+        string interstitiate = (Application.platform == RuntimePlatform.IPhonePlayer) ? "Interstitial_iOS" : "Interstitial_Android";
+        if (placementId.Equals(interstitiate) && UnityAdsShowCompletionState.COMPLETED.Equals(showCompletionState))
+        {
+            Debug.Log("interstitiate Player");
+            SceneManager.LoadScene("Scenes/MainMenu");
         }
     }
 
@@ -104,7 +120,6 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener, IU
     void OnBannerLoaded()
     {
         Advertisement.Banner.Show("Banner_Android");
-        Debug.Log("Banner ad loaded");
     }
 
     void OnBannerError(string message)
